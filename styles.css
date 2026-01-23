@@ -605,6 +605,60 @@ svg.lightning {
     width: 100%;
 }
 
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    width: 250px;
+    background: rgba(10, 14, 39, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(0, 212, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem 0;
+    list-style: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(15px);
+}
+
+.dropdown-menu li {
+    width: 100%;
+}
+
+.dropdown-menu li a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.dropdown-menu li a:hover {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--primary);
+    padding-left: 1.8rem;
+}
+
+.dropdown-menu li a i {
+    width: 20px;
+    margin-right: 10px;
+    color: var(--primary);
+}
+
 .nav-link.cta-btn {
     background: var(--gradient-1);
     padding: 0.75rem 1.5rem;
