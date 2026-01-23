@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Leads Analytics - Lead Generation & Local Service Growth Partner</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Enhanced Futuristic Background with Stars, Clouds, and Lightning -->
+    <div class="lightning-bg">
+        <!-- Star Field Layer -->
+        <div class="stars-bg"></div>
+        
+        <!-- Cloud Layer -->
+        <div class="clouds-bg"></div>
+        
+        <!-- Tech Grid Pattern -->
+        <div class="tech-grid"></div>
+        
+        <!-- Ambient Glow -->
+        <div class="ambient-glow"></div>
+        
+        <!-- Electrical Field -->
+        <div class="electrical-field"></div>
+        
+        <!-- Lightning Bolts -->
+        <div class="lightning-container">
+            <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
+                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
+                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
+                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
+                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+            </svg>
+        </div>
+        
+        <!-- Floating Particles -->
+        <div class="particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Apex Leads</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Results</a></li>
+                    <li><a href="industries.html" class="nav-link">Industries</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li><a href="tools.html" class="nav-link">Tools</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="book-call.html" class="nav-link cta-btn">Book a Call</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-logo-wrapper">
+                    <div class="logo-container">
+                        <img src="logo.svg" alt="Apex Leads Analytics Logo" class="hero-logo">
+                        <div class="logo-glow"></div>
+                        <div class="logo-particles"></div>
+                    </div>
+                </div>
+                <h1 class="hero-title">Apex Leads Analytics</h1>
+                <p class="hero-subtitle">Transform Leads Into Revenue</p>
+                <p class="hero-description">Generate high-quality leads and scale your service business with zero operational overhead</p>
+                
+                <!-- Service Buttons -->
+                <div class="service-buttons">
+                    <h3>Explore Our Services</h3>
+                    <div class="service-button-grid">
+                        <a href="house-cleaning.html" class="service-btn">
+                            <i class="fas fa-home"></i>
+                            <span>House Cleaning</span>
+                        </a>
+                        <a href="pressure-washing.html" class="service-btn">
+                            <i class="fas fa-water"></i>
+                            <span>Pressure Washing</span>
+                        </a>
+                        <a href="gutter-cleaning.html" class="service-btn">
+                            <i class="fas fa-tree"></i>
+                            <span>Gutter Cleaning</span>
+                        </a>
+                        <a href="car-detailing.html" class="service-btn">
+                            <i class="fas fa-car"></i>
+                            <span>Car Detailing</span>
+                        </a>
+                        <a href="garden-maintenance.html" class="service-btn">
+                            <i class="fas fa-leaf"></i>
+                            <span>Garden Maintenance</span>
+                        </a>
+                        <a href="carpet-cleaning.html" class="service-btn">
+                            <i class="fas fa-rug"></i>
+                            <span>Carpet Cleaning</span>
+                        </a>
+                        <a href="electricians.html" class="service-btn">
+                            <i class="fas fa-plug"></i>
+                            <span>Electricians</span>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('contact')">Get Free Consultation</button>
+                    <button class="btn btn-secondary" onclick="scrollToSection('how-it-works')">Learn More</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-background">
+            <div class="gradient-sphere"></div>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do">
+        <div class="container">
+            <h2>What We Do</h2>
+            <p class="section-subtitle">Your Complete Lead Generation & Fulfillment Partner</p>
+            
+            <div class="what-we-do-grid">
+                <div class="what-we-do-item">
+                    <img src="illustration-lead.svg" alt="Lead Generation Illustration" class="what-we-do-img">
+                    <h3>Generate High-Quality Leads</h3>
+                    <p>We use targeted digital marketing strategies to identify and connect property owners actively searching for your services. Every lead is verified, contacted, and ready to book.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Google Ads, Facebook, and social targeting</li>
+                        <li><i class="fas fa-check-circle"></i> Local area marketing expertise</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time lead delivery via email & SMS</li>
+                        <li><i class="fas fa-check-circle"></i> Pre-verified customer information</li>
+                    </ul>
+                </div>
+                
+                <div class="what-we-do-item">
+                    <img src="illustration-growth.svg" alt="Scalable Growth Illustration" class="what-we-do-img">
+                    <h3>Scale Your Business Rapidly</h3>
+                    <p>Build a scalable lead generation operation without hiring employees, managing teams, or dealing with service delivery. Focus on growth while we handle the operations.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Zero equipment or infrastructure needed</li>
+                        <li><i class="fas fa-check-circle"></i> Sell leads or manage fulfillment</li>
+                        <li><i class="fas fa-check-circle"></i> Expand across multiple niches</li>
+                        <li><i class="fas fa-check-circle"></i> Predictable revenue streams</li>
+                    </ul>
+                </div>
+                
+                <div class="what-we-do-item">
+                    <img src="illustration-partnership.svg" alt="Partnership Illustration" class="what-we-do-img">
+                    <h3>Complete Fulfillment Services</h3>
+                    <p>We don't just deliver leads—we manage the entire customer journey. From booking and confirmation to payment processing and follow-up, we handle everything.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Customer appointment scheduling</li>
+                        <li><i class="fas fa-check-circle"></i> Payment processing & invoicing</li>
+                        <li><i class="fas fa-check-circle"></i> Contractor management</li>
+                        <li><i class="fas fa-check-circle"></i> Quality control & follow-up</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>£5-£15</h3>
+                    <p>Cost Per Lead</p>
+                </div>
+                <div class="stat-card">
+                    <h3>£10-£30</h3>
+                    <p>Lead Selling Price</p>
+                </div>
+                <div class="stat-card">
+                    <h3>20-40%</h3>
+                    <p>Service Margin</p>
+                </div>
+                <div class="stat-card">
+                    <h3>100%</h3>
+                    <p>Scalable</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <p class="section-subtitle">Get started with Apex Leads Analytics in just minutes</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Tell Us Your Service</h3>
+                    <p>Choose from house cleaning, pressure washing, gutter cleaning, car detailing, garden maintenance, or carpet cleaning.</p>
+                    <div class="step-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Quick Registration</h3>
+                    <p>Provide your business details, service area, and availability. Takes just 5 minutes to set up your account.</p>
+                    <div class="step-icon">
+                        <i class="fas fa-clipboard-check"></i>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>We Run The Ads</h3>
+                    <p>We handle all marketing on Facebook, Google, and TikTok. You focus on delivering great service.</p>
+                    <div class="step-icon">
+                        <i class="fas fa-megaphone"></i>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">04</div>
+                    <h3>Get Qualified Leads</h3>
+                    <p>Receive real customer inquiries instantly via email, WhatsApp, or SMS. Real-time notifications mean you reply first.</p>
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">05</div>
+                    <h3>Offer Fulfillment</h3>
+                    <p>Scale faster by managing subcontractors. Charge customers £120, pay contractors £70, keep £50 margin plus lead commission.</p>
+                    <div class="step-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">06</div>
+                    <h3>Scale Infinitely</h3>
+                    <p>No equipment needed. No labor required. Repeat the system across multiple niches and locations with zero overhead.</p>
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 1.5rem;">Want the full breakdown? Check out our detailed How It Works guide.</p>
+                <a href="how-it-works.html" class="btn btn-primary">Learn Our Complete Process</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Popular Service Niches</h2>
+            <p class="section-subtitle">Start with any of these high-demand local services</p>
+            
+            <div class="services-grid">
+                <a href="house-cleaning.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>House Cleaning</h3>
+                        <p>High demand, recurring revenue potential, easy to outsource and scale rapidly.</p>
+                    </div>
+                </a>
+
+                <a href="pressure-washing.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3>Pressure Washing</h3>
+                        <p>Driveways, patios, and facades. Simple service, high margins, excellent seasonal demand.</p>
+                    </div>
+                </a>
+
+                <a href="car-detailing.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-car"></i>
+                        </div>
+                        <h3>Car Detailing</h3>
+                        <p>Premium pricing, recurring customers, perfect for mobile service model.</p>
+                    </div>
+                </a>
+
+                <a href="garden-maintenance.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Garden Maintenance</h3>
+                        <p>Seasonal work, monthly contracts, strong profit margins with subcontractors.</p>
+                    </div>
+                </a>
+
+                <a href="gutter-cleaning.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+                        <h3>Gutter Cleaning</h3>
+                        <p>Essential service, high frequency, low competition in many areas.</p>
+                    </div>
+                </a>
+
+                <a href="carpet-cleaning.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-rug"></i>
+                        </div>
+                        <h3>Carpet Cleaning</h3>
+                        <p>Established demand, recurring appointments, excellent for building relationships.</p>
+                    </div>
+                </a>
+
+                <a href="electricians.html" class="service-card-link">
+                    <div class="service-card">
+                        <div class="service-icon" style="color: #FF9500;">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>Electricians</h3>
+                        <p>Exclusive leads for urgent electrical work. High-value jobs with excellent profit margins.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <h2>Flexible Pricing Models</h2>
+            <p class="section-subtitle">Choose the model that works best for your contractors</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Per Lead</h3>
+                        <p class="price">£10-£30</p>
+                        <span class="per">per lead</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Pay only for leads received</li>
+                        <li><i class="fas fa-check"></i> Low entry cost for contractors</li>
+                        <li><i class="fas fa-check"></i> Perfect for testing</li>
+                        <li><i class="fas fa-check"></i> No long-term commitment</li>
+                    </ul>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h3>Monthly Unlimited</h3>
+                        <p class="price">£200-£500</p>
+                        <span class="per">per month</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> Unlimited leads per month</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Exclusive territory option</li>
+                        <li><i class="fas fa-check"></i> Dedicated account manager</li>
+                    </ul>
+                    <button class="btn btn-primary">Get Started</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Commission Based</h3>
+                        <p class="price">20-40%</p>
+                        <span class="per">of service revenue</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> We handle everything</li>
+                        <li><i class="fas fa-check"></i> Zero upfront cost</li>
+                        <li><i class="fas fa-check"></i> Fulfillment service included</li>
+                        <li><i class="fas fa-check"></i> Best for new contractors</li>
+                    </ul>
+                    <button class="btn btn-secondary">Learn More</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->\n    <section style="padding: 60px 20px; background: linear-gradient(180deg, rgba(0, 212, 255, 0.03) 0%, rgba(124, 58, 237, 0.03) 100%); border-top: 1px solid rgba(0, 212, 255, 0.1); border-bottom: 1px solid rgba(0, 212, 255, 0.1);">
+        <div class="container" style="max-width: 900px;">
+            <h2 style="font-size: 2rem; text-align: center; margin-bottom: 1rem; background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Get in Touch With Our Team</h2>
+            <p style="text-align: center; color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 700px; margin-left: auto; margin-right: auto;">Have questions about lead generation or want to discuss your business? Contact Moazzin and the Apex Leads team today for a free consultation.</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
+                <div style="background: rgba(21, 29, 59, 0.5); border: 1px solid rgba(0, 212, 255, 0.15); border-radius: 12px; padding: 2rem; text-align: center; backdrop-filter: blur(10px); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(0, 212, 255, 0.4)'; this.style.background='rgba(21, 29, 59, 0.7)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 212, 255, 0.15)'; this.style.background='rgba(21, 29, 59, 0.5)';">
+                    <div style="font-size: 2.5rem; color: #00d4ff; margin-bottom: 1rem;">📞</div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Call Us</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Available Monday to Friday, 9am-6pm GMT</p>
+                    <a href="tel:07456522980" style="color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem;">07456 522 980</a>
+                </div>
+                
+                <div style="background: rgba(21, 29, 59, 0.5); border: 1px solid rgba(0, 212, 255, 0.15); border-radius: 12px; padding: 2rem; text-align: center; backdrop-filter: blur(10px); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(0, 212, 255, 0.4)'; this.style.background='rgba(21, 29, 59, 0.7)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 212, 255, 0.15)'; this.style.background='rgba(21, 29, 59, 0.5)';">
+                    <div style="font-size: 2.5rem; color: #7c3aed; margin-bottom: 1rem;">📧</div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">Email Us</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">We reply within 24 hours</p>
+                    <a href="mailto:Moazzin.zaman@outlook.com" style="color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem;">Moazzin.zaman@outlook.com</a>
+                </div>
+                
+                <div style="background: rgba(21, 29, 59, 0.5); border: 1px solid rgba(0, 212, 255, 0.15); border-radius: 12px; padding: 2rem; text-align: center; backdrop-filter: blur(10px); transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-5px)'; this.style.borderColor='rgba(0, 212, 255, 0.4)'; this.style.background='rgba(21, 29, 59, 0.7)';" onmouseout="this.style.transform='translateY(0)'; this.style.borderColor='rgba(0, 212, 255, 0.15)'; this.style.background='rgba(21, 29, 59, 0.5)';">
+                    <div style="font-size: 2.5rem; color: #00ff88; margin-bottom: 1rem;">💬</div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.2rem;">WhatsApp</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 1rem;">Quick responses, instant communication</p>
+                    <a href="https://wa.me/447456522980" target="_blank" style="color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem;">Message on WhatsApp</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center;">
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1.5rem;">💡 Prefer to fill out a form? Complete your details below under Contact Us section to get started.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Revenue Model Section -->
+    <section class="revenue-model">
+        <div class="container">
+            <h2>Multiple Revenue Streams</h2>
+            <p class="section-subtitle">Build wealth from 3 income sources simultaneously</p>
+            
+            <div class="revenue-grid">
+                <div class="revenue-card">
+                    <h3><i class="fas fa-bullseye"></i> Lead Revenue</h3>
+                    <p>Sell leads to contractors at £10-£30 each, or £200-£500 monthly subscriptions.</p>
+                    <p class="revenue-example"><strong>Example:</strong> 50 leads/month × £20 = £1,000</p>
+                </div>
+
+                <div class="revenue-card">
+                    <h3><i class="fas fa-briefcase"></i> Service Revenue</h3>
+                    <p>Fulfill services yourself with managed subcontractors. Keep the margin between client price and contractor cost.</p>
+                    <p class="revenue-example"><strong>Example:</strong> 10 jobs × £50 margin = £500</p>
+                </div>
+
+                <div class="revenue-card">
+                    <h3><i class="fas fa-infinite"></i> Scalability</h3>
+                    <p>Zero labor, zero equipment, zero skills needed. Pure arbitrage and margin capture.</p>
+                    <p class="revenue-example"><strong>Example:</strong> Expand to 5 niches = 5x revenue</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Success Stories</h2>
+            <p class="section-subtitle">See how contractors are thriving with our system</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Started with pressure washing leads, now doing £3k/month just from lead sales. No work, just profit."</p>
+                    <div class="testimonial-author">
+                        <p><strong>James M.</strong></p>
+                        <p>Pressure Washing Contractor</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"Their fulfillment service is a game-changer. I'm making money I never thought possible from lead margins alone."</p>
+                    <div class="testimonial-author">
+                        <p><strong>Sarah K.</strong></p>
+                        <p>Cleaning Service Owner</p>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The system works. Scaled to 3 niches in 4 months. This is the most passive income I've ever made."</p>
+                    <div class="testimonial-author">
+                        <p><strong>Marcus T.</strong></p>
+                        <p>Multi-Niche Lead Gen Owner</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Start Your Lead Gen Business?</h2>
+            <p>Get your first niche up and running in 7 days. No experience required.</p>
+            <button class="btn btn-primary btn-large" onclick="scrollToSection('contact')">Book Free Consultation</button>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h2>Get Started Today</h2>
+                    <p>Let's discuss your lead generation strategy and find the perfect niche for your business.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>07456 522 980</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>Moazzin.zaman@outlook.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>WhatsApp</h4>
+                                <p>Message us anytime</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="leadForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Your Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Your Niche</option>
+                            <option value="house-cleaning">House Cleaning</option>
+                            <option value="pressure-washing">Pressure Washing</option>
+                            <option value="car-detailing">Car Detailing</option>
+                            <option value="garden-maintenance">Garden Maintenance</option>
+                            <option value="gutter-cleaning">Gutter Cleaning</option>
+                            <option value="carpet-cleaning">Carpet Cleaning</option>
+                            <option value="electricians">Electricians</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Tell us about your business or goals..." rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send My Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Apex Leads Analytics</h4>
+                    <p>Your Lead Generation & Local Service Growth Partner</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Apex Leads Analytics. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries & Niches - Apex Leads Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .industry-card {
+            background: rgba(21, 29, 59, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .industry-card:hover {
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+            background: rgba(21, 29, 59, 0.8);
+        }
+        .industry-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+        .industry-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .lead-value {
+            display: inline-block;
+            background: rgba(0, 212, 255, 0.1);
+            padding: 0.75rem 1.5rem;
+            border-radius: 20px;
+            margin: 0.5rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Futuristic Background -->
+    <div class="lightning-bg">
+        <div class="stars-bg"></div>
+        <div class="clouds-bg"></div>
+        <div class="tech-grid"></div>
+        <div class="ambient-glow"></div>
+        <div class="electrical-field"></div>
+        <div class="lightning-container">
+            <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
+                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
+                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
+                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
+                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+            </svg>
+        </div>
+        <div class="particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Apex Leads</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Results</a></li>
+                    <li><a href="industries.html" class="nav-link active">Industries</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li><a href="tools.html" class="nav-link">Tools</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="book-call.html" class="nav-link cta-btn">Book a Call</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-page-hero">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Industries</span>
+        </div>
+        <h1>🎯 Industries We Serve</h1>
+        <p>Specialized lead generation for high-demand service industries across the UK</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="service-content container">
+        <div>
+            <h2 style="margin-bottom: 1rem;">Find Your Industry</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Each industry has unique customer needs and buying behaviors. We've specialized our lead generation process for maximum conversions in each niche.</p>
+
+            <div class="industry-grid">
+                <!-- Home Services -->
+                <div class="industry-card">
+                    <div class="industry-icon" style="color: #00d4ff;">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Home Services</h3>
+                    <p>Cleaning, maintenance, repairs, and improvements for residential properties.</p>
+                    <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(0, 212, 255, 0.2); border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Included Services:</p>
+                        <p style="font-size: 0.95rem;">House Cleaning • Carpet Cleaning • Pressure Washing • Gutter Cleaning</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <span class="lead-value">£10-£30 per lead</span>
+                        <br/>
+                        <span class="lead-value">High Conversion</span>
+                    </div>
+                </div>
+
+                <!-- Skilled Trades -->
+                <div class="industry-card">
+                    <div class="industry-icon" style="color: #FF9500;">
+                        <i class="fas fa-wrench"></i>
+                    </div>
+                    <h3>Skilled Trades</h3>
+                    <p>Premium services requiring specialized qualifications and certifications.</p>
+                    <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(0, 212, 255, 0.2); border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Included Services:</p>
+                        <p style="font-size: 0.95rem;">Electricians • Plumbers • HVAC Technicians • Gas Engineers</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <span class="lead-value">£15-£50 per lead</span>
+                        <br/>
+                        <span class="lead-value">Premium Pricing</span>
+                    </div>
+                </div>
+
+                <!-- Outdoor & Garden -->
+                <div class="industry-card">
+                    <div class="industry-icon" style="color: #00ff88;">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Outdoor & Garden</h3>
+                    <p>Landscaping, garden maintenance, tree work, and outdoor improvements.</p>
+                    <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(0, 212, 255, 0.2); border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Included Services:</p>
+                        <p style="font-size: 0.95rem;">Garden Maintenance • Landscaping • Tree Surgery • Fence Installation</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <span class="lead-value">£15-£40 per lead</span>
+                        <br/>
+                        <span class="lead-value">Seasonal Peaks</span>
+                    </div>
+                </div>
+
+                <!-- Automotive -->
+                <div class="industry-card">
+                    <div class="industry-icon" style="color: #ff006e;">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Automotive</h3>
+                    <p>Mobile services for vehicles - detailing, valeting, and reconditioning.</p>
+                    <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(0, 212, 255, 0.2); border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Included Services:</p>
+                        <p style="font-size: 0.95rem;">Car Detailing • Mobile Valeting • Paint Protection • Fleet Services</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <span class="lead-value">£15-£35 per lead</span>
+                        <br/>
+                        <span class="lead-value">Recurring Revenue</span>
+                    </div>
+                </div>
+
+                <!-- Fitness & Wellness -->
+                <div class="industry-card">
+                    <div class="industry-icon" style="color: #7c3aed;">
+                        <i class="fas fa-dumbbell"></i>
+                    </div>
+                    <h3>Fitness & Wellness</h3>
+                    <p>Personal training, coaching, and wellness services with high profit margins.</p>
+                    <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(0, 212, 255, 0.2); border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Included Services:</p>
+                        <p style="font-size: 0.95rem;">Personal Training • Online Coaching • Wellness Consulting • Fitness Plans</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <span class="lead-value">£20-£60 per lead</span>
+                        <br/>
+                        <span class="lead-value">High LTV</span>
+                    </div>
+                </div>
+
+                <!-- Professional Services -->
+                <div class="industry-card">
+                    <div class="industry-icon" style="color: #00d4ff;">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Professional Services</h3>
+                    <p>Consulting, accounting, legal services, and business advisory.</p>
+                    <div style="margin: 1.5rem 0; padding: 1.5rem 0; border-top: 1px solid rgba(0, 212, 255, 0.2); border-bottom: 1px solid rgba(0, 212, 255, 0.2);">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;">Included Services:</p>
+                        <p style="font-size: 0.95rem;">Consulting • Accounting • Legal Services • Business Coaching</p>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <span class="lead-value">£25-£75 per lead</span>
+                        <br/>
+                        <span class="lead-value">Enterprise Value</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Each Industry -->
+        <div style="margin-top: 4rem;">
+            <h2>Industry Specifics</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Each industry has unique characteristics that require specialized marketing approaches and lead qualification strategies.</p>
+
+            <div style="background: rgba(21, 29, 59, 0.6); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px); margin-bottom: 2rem;">
+                <h3 style="color: var(--primary); margin-bottom: 1rem;">🏠 Home Services Industry</h3>
+                <p><strong>Customer Profile:</strong> Homeowners aged 30-65, property owners, landlords</p>
+                <p style="margin: 1rem 0;"><strong>Peak Seasons:</strong> Spring/Summer for outdoor work, Winter for emergency services</p>
+                <p><strong>Lead Value:</strong> £10-£30 per lead | Conversion: 25-40%</p>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">Wide market with high frequency repeat business. Requires efficient scheduling and customer relationship management.</p>
+            </div>
+
+            <div style="background: rgba(21, 29, 59, 0.6); border: 1px solid rgba(255, 149, 0, 0.2); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px); margin-bottom: 2rem;">
+                <h3 style="color: #FF9500; margin-bottom: 1rem;">⚡ Skilled Trades Industry</h3>
+                <p><strong>Customer Profile:</strong> Property owners, businesses, facilities managers</p>
+                <p style="margin: 1rem 0;"><strong>Lead Characteristics:</strong> Often urgent, high-value jobs, premium pricing tolerance</p>
+                <p><strong>Lead Value:</strong> £15-£50+ per lead | Conversion: 30-50%</p>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">Emergency demand drives higher conversions. Requires proper licensing and insurance verification.</p>
+            </div>
+
+            <div style="background: rgba(21, 29, 59, 0.6); border: 1px solid rgba(0, 255, 136, 0.2); border-radius: 15px; padding: 2rem; backdrop-filter: blur(10px); margin-bottom: 2rem;">
+                <h3 style="color: #00ff88; margin-bottom: 1rem;">🌿 Outdoor & Garden Industry</h3>
+                <p><strong>Customer Profile:</strong> Homeowners with gardens, property managers, landscaping companies</p>
+                <p style="margin: 1rem 0;"><strong>Seasonality:</strong> Highly seasonal - peaks Spring/Summer, lows Winter</p>
+                <p><strong>Lead Value:</strong> £15-£40 per lead | Conversion: 28-45%</p>
+                <p style="margin-top: 1rem; color: var(--text-secondary);">Strong recurring revenue potential. Best ROI in warmer months. Plan cash flow around seasonal cycles.</p>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div style="margin-top: 4rem; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%); padding: 2.5rem; border-radius: 15px; border: 1px solid rgba(0, 212, 255, 0.2);">
+            <h2 style="margin-bottom: 1rem;">Ready to Start Your Industry?</h2>
+            <p style="margin-bottom: 1.5rem;">Choose your industry, set your parameters, and start receiving leads within 48 hours.</p>
+            <a href="index.html#contact" class="scroll-link" style="display: inline-block; background: var(--primary); color: black; padding: 1rem 2rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
+                Choose Your Industry
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-chart-line"></i> Apex Leads Analytics</h3>
+                <p>Professional lead generation for service contractors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="case-studies.html">Results</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +44 (0) 7456 522 980</p>
+                <p>Email: Moazzin.zaman@outlook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Leads Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources & Playbooks - Apex Leads Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .resource-card {
+            background: rgba(21, 29, 59, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        .resource-card:hover {
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+        }
+        .resource-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .playbook-step {
+            background: rgba(0, 212, 255, 0.05);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: black;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: 700;
+            margin-right: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Futuristic Background -->
+    <div class="lightning-bg">
+        <div class="stars-bg"></div>
+        <div class="clouds-bg"></div>
+        <div class="tech-grid"></div>
+        <div class="ambient-glow"></div>
+        <div class="electrical-field"></div>
+        <div class="lightning-container">
+            <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
+                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
+                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
+                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
+                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+            </svg>
+        </div>
+        <div class="particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Apex Leads</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Results</a></li>
+                    <li><a href="industries.html" class="nav-link">Industries</a></li>
+                    <li><a href="resources.html" class="nav-link active">Resources</a></li>
+                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li><a href="tools.html" class="nav-link">Tools</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="book-call.html" class="nav-link cta-btn">Book a Call</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-page-hero">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Resources</span>
+        </div>
+        <h1>📚 Resources & Playbooks</h1>
+        <p>Master the art of lead generation with proven strategies and frameworks</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="service-content container">
+        <!-- Resource Library -->
+        <div>
+            <h2 style="margin-bottom: 2rem;">Learning Library</h2>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-icon" style="color: var(--primary);">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Lead Gen Fundamentals Playbook</h3>
+                    <p style="color: var(--text-secondary); margin: 1rem 0;">Learn the complete framework for setting up and scaling a lead generation business from scratch.</p>
+                    <ul style="margin: 1rem 0; color: var(--text-secondary);">
+                        <li>✓ Market analysis strategies</li>
+                        <li>✓ Industry selection criteria</li>
+                        <li>✓ Pricing your leads</li>
+                        <li>✓ Marketing channels guide</li>
+                    </ul>
+                    <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--primary); text-decoration: none; font-weight: 600;">Download Playbook →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon" style="color: #FF9500;">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Conversion Optimization Guide</h3>
+                    <p style="color: var(--text-secondary); margin: 1rem 0;">Proven tactics to increase your lead-to-booking conversion rates by 40%+.</p>
+                    <ul style="margin: 1rem 0; color: var(--text-secondary);">
+                        <li>✓ Lead qualification criteria</li>
+                        <li>✓ Communication templates</li>
+                        <li>✓ Follow-up sequences</li>
+                        <li>✓ Objection handling</li>
+                    </ul>
+                    <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--primary); text-decoration: none; font-weight: 600;">Download Guide →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon" style="color: #00ff88;">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Rapid Scaling Playbook</h3>
+                    <p style="color: var(--text-secondary); margin: 1rem 0;">Scale from £2k to £10k monthly revenue in 90 days using our proven system.</p>
+                    <ul style="margin: 1rem 0; color: var(--text-secondary);">
+                        <li>✓ Automation strategies</li>
+                        <li>✓ Hiring & delegation</li>
+                        <li>✓ Team structures</li>
+                        <li>✓ Financial projections</li>
+                    </ul>
+                    <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--primary); text-decoration: none; font-weight: 600;">Download Playbook →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon" style="color: #7c3aed;">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Market Insights Report</h3>
+                    <p style="color: var(--text-secondary); margin: 1rem 0;">Latest data on lead costs, conversion rates, and profit margins by industry.</p>
+                    <ul style="margin: 1rem 0; color: var(--text-secondary);">
+                        <li>✓ Industry benchmarks</li>
+                        <li>✓ Trend analysis</li>
+                        <li>✓ Competitive landscape</li>
+                        <li>✓ Opportunity identification</li>
+                    </ul>
+                    <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--primary); text-decoration: none; font-weight: 600;">Download Report →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon" style="color: #ff006e;">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Marketing Framework Guide</h3>
+                    <p style="color: var(--text-secondary); margin: 1rem 0;">Complete guide to Facebook, Google, and TikTok advertising for lead generation.</p>
+                    <ul style="margin: 1rem 0; color: var(--text-secondary);">
+                        <li>✓ Platform strategies</li>
+                        <li>✓ Ad creation templates</li>
+                        <li>✓ Budget allocation</li>
+                        <li>✓ Performance tracking</li>
+                    </ul>
+                    <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--primary); text-decoration: none; font-weight: 600;">Download Guide →</a>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon" style="color: #00d4ff;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Client Management Playbook</h3>
+                    <p style="color: var(--text-secondary); margin: 1rem 0;">Systems for managing contractors, fulfillment, and customer relationships at scale.</p>
+                    <ul style="margin: 1rem 0; color: var(--text-secondary);">
+                        <li>✓ CRM setup guide</li>
+                        <li>✓ SOP templates</li>
+                        <li>✓ Communication workflows</li>
+                        <li>✓ Retention strategies</li>
+                    </ul>
+                    <a href="#" style="display: inline-block; margin-top: 1rem; color: var(--primary); text-decoration: none; font-weight: 600;">Download Playbook →</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Start Playbook -->
+        <div style="margin-top: 4rem;">
+            <h2 style="margin-bottom: 2rem;">30-Day Quick Start Playbook</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Get your first leads within 30 days with this step-by-step framework.</p>
+
+            <div class="playbook-step">
+                <span class="step-number">1</span>
+                <div style="display: inline-block; width: calc(100% - 60px);">
+                    <h4 style="margin-bottom: 0.5rem;">Choose Your Industry (Days 1-3)</h4>
+                    <p style="color: var(--text-secondary); margin: 0;">Research your target market, analyze competition, identify your unique angle. Use our industry analysis templates to make a data-driven decision.</p>
+                </div>
+            </div>
+
+            <div class="playbook-step">
+                <span class="step-number">2</span>
+                <div style="display: inline-block; width: calc(100% - 60px);">
+                    <h4 style="margin-bottom: 0.5rem;">Set Up Your Systems (Days 4-7)</h4>
+                    <p style="color: var(--text-secondary); margin: 0;">Create your CRM, landing pages, email sequences, and lead qualification checklist. Use our templates to accelerate setup.</p>
+                </div>
+            </div>
+
+            <div class="playbook-step">
+                <span class="step-number">3</span>
+                <div style="display: inline-block; width: calc(100% - 60px);">
+                    <h4 style="margin-bottom: 0.5rem;">Launch First Campaign (Days 8-15)</h4>
+                    <p style="color: var(--text-secondary); margin: 0;">Create ad creatives, launch Facebook/Google campaigns, set budget at £5-£10/day. Test messaging and targeting.</p>
+                </div>
+            </div>
+
+            <div class="playbook-step">
+                <span class="step-number">4</span>
+                <div style="display: inline-block; width: calc(100% - 60px);">
+                    <h4 style="margin-bottom: 0.5rem;">Optimize & Scale (Days 16-30)</h4>
+                    <p style="color: var(--text-secondary); margin: 0;">Analyze results, refine targeting, improve creatives, increase budget to winning campaigns. Target 3-5 leads/week by day 30.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Expert Tips -->
+        <div style="margin-top: 4rem; background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%); padding: 2.5rem; border-radius: 15px;">
+            <h2 style="margin-bottom: 1rem;">💡 Pro Tips From Our Top Performers</h2>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">✓ Test Multiple Ad Angles</h4>
+                    <p style="color: var(--text-secondary);">Don't rely on one ad. Create 5-10 variations with different messaging, visuals, and calls-to-action. Test simultaneously to find winners fast.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">✓ Focus on Lead Quality Over Quantity</h4>
+                    <p style="color: var(--text-secondary);">One high-quality lead that converts is worth 10 bad leads. Invest time in qualification and messaging that attracts your ideal customer.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">✓ Build Your Email Sequences</h4>
+                    <p style="color: var(--text-secondary);">Automated follow-ups increase conversions 3-5x. Create 3-5 email sequences based on customer type and lead source.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;">✓ Document Everything</h4>
+                    <p style="color: var(--text-secondary);">Create SOPs for lead fulfillment, customer communication, and follow-ups. This enables you to scale without adding complexity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+        <h2>Ready to Master Lead Generation?</h2>
+        <p>Access all playbooks and resources by becoming an Apex Leads Analytics member</p>
+        <a href="index.html#contact" class="scroll-link" style="display: inline-block; background: var(--primary); color: black; padding: 1rem 2.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin-top: 1.5rem;">
+            Get Full Access
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-chart-line"></i> Apex Leads Analytics</h3>
+                <p>Professional lead generation for service contractors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="case-studies.html">Results</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +44 (0) 7456 522 980</p>
+                <p>Email: Moazzin.zaman@outlook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Leads Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

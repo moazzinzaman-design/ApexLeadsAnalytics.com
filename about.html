@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Apex Leads Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .mission-section {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .value-card {
+            background: rgba(21, 29, 59, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        .value-card:hover {
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+        }
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .team-member {
+            background: rgba(21, 29, 59, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .team-member:hover {
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+        }
+        .team-avatar {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        .team-info {
+            padding: 1.5rem;
+        }
+        .team-info h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text-primary);
+        }
+        .team-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .team-bio {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .timeline-item {
+            display: flex;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 50px;
+            width: 2px;
+            height: 100%;
+            background: var(--primary);
+            opacity: 0.3;
+        }
+        .timeline-item:last-child::before {
+            display: none;
+        }
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 2rem;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        .timeline-content {
+            background: rgba(21, 29, 59, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 10px;
+            padding: 1.5rem;
+            flex: 1;
+        }
+        .timeline-year {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .testimonial-highlight {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Futuristic Background -->
+    <div class="lightning-bg">
+        <div class="stars-bg"></div>
+        <div class="clouds-bg"></div>
+        <div class="tech-grid"></div>
+        <div class="ambient-glow"></div>
+        <div class="electrical-field"></div>
+        <div class="lightning-container">
+            <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
+                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
+                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
+                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
+                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+            </svg>
+        </div>
+        <div class="particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Apex Leads</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Results</a></li>
+                    <li><a href="industries.html" class="nav-link">Industries</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="index.html#contact" class="nav-link cta-btn">Get Started</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-page-hero">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>About</span>
+        </div>
+        <h1>🚀 Our Story & Mission</h1>
+        <p>Building the future of lead generation for service contractors</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="service-content container">
+        <!-- Mission Statement -->
+        <div class="mission-section">
+            <h2 style="margin-top: 0;">Our Mission</h2>
+            <p style="font-size: 1.1rem; line-height: 1.8; max-width: 800px; margin: 1rem auto 0;">
+                To empower service contractors and skilled trades professionals with intelligent lead generation technology that fuels sustainable business growth, eliminates lead generation uncertainty, and creates predictable revenue streams.
+            </p>
+        </div>
+
+        <!-- Our Story -->
+        <div style="margin: 3rem 0;">
+            <h2>How It All Started</h2>
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                Apex Leads Analytics was founded by <strong>Moazzin Zaman</strong> with a clear vision: to solve one of the biggest challenges facing service contractors — the unpredictability and low quality of leads.
+            </p>
+            
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                After working closely with dozens of electricians, plumbers, cleaners, and tradespeople, Moazzin discovered a consistent pattern: contractors had the skills, the teams, and the capacity to grow — but they were struggling with lead generation. Many were wasting money on generic lead providers who sold the same leads to multiple competitors, or they were stuck spending hours on manual lead hunting.
+            </p>
+
+            <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+                This frustration sparked an idea: what if there was a smarter way? What if contractors could get access to pre-qualified, exclusive leads — delivered consistently, with real-time support to optimize their conversion?
+            </p>
+
+            <p style="color: var(--text-secondary); line-height: 1.8;">
+                That's when Apex Leads Analytics was born. Today, we've helped <strong>500+ contractors</strong> scale their businesses, generate <strong>£2.5M+ in combined revenue</strong>, and achieve an <strong>92% client satisfaction rate</strong>.
+            </p>
+        </div>
+
+        <!-- Core Values -->
+        <div style="margin: 3rem 0;">
+            <h2>Our Core Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon" style="color: var(--primary);">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Quality Over Quantity</h3>
+                    <p style="color: var(--text-secondary); margin: 0;">Every lead is pre-qualified, genuine, and exclusive to your territory.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon" style="color: #FF9500;">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Partnership Mindset</h3>
+                    <p style="color: var(--text-secondary); margin: 0;">Your success is our success. We're invested in your growth every step of the way.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon" style="color: #00ff88;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Transparency</h3>
+                    <p style="color: var(--text-secondary); margin: 0;">Clear metrics, honest reporting, and real-time insights into your performance.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon" style="color: #7c3aed;">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p style="color: var(--text-secondary); margin: 0;">Constantly improving our technology and strategies to stay ahead.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon" style="color: #ff006e;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Reliability</h3>
+                    <p style="color: var(--text-secondary); margin: 0;">Consistent, dependable lead delivery you can count on month after month.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-icon" style="color: #FFD700;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p style="color: var(--text-secondary); margin: 0;">Building a community of successful contractors who support each other.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Timeline -->
+        <div style="margin: 3rem 0;">
+            <h2>Our Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-lightbulb" style="color: black;"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2022 - The Idea</div>
+                        <p style="margin: 0; color: var(--text-secondary);">Moazzin identifies the lead generation problem facing contractors and conceptualizes Apex Leads as the solution.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-code" style="color: black;"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2023 - Beta Launch</div>
+                        <p style="margin: 0; color: var(--text-secondary);">Soft launch with 20 beta contractors. Proof of concept shows 150% average ROI. Refine platform based on real feedback.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-rocket" style="color: black;"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024 - Public Launch</div>
+                        <p style="margin: 0; color: var(--text-secondary);">Full platform launch. Expand to 500+ contractors across UK. Build support infrastructure and educational resources.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot">
+                        <i class="fas fa-star" style="color: black;"></i>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">2024 - 92% Satisfaction</div>
+                        <p style="margin: 0; color: var(--text-secondary);">Achieve 92% client satisfaction rate. Generate £2.5M+ in combined revenue for our contractors. Setting new industry standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Founder Highlight -->
+        <div class="testimonial-highlight">
+            <p style="margin: 0;">
+                "I started Apex Leads because I genuinely believed that contractors deserved better. Every day, I see our clients transform their businesses - from going solo to hiring their first employee, from struggling to find leads to being booked solid. That impact drives everything we do. We're not just a lead provider; we're partners in your success."
+            </p>
+            <p style="margin: 1rem 0 0 0; font-weight: 600; color: var(--primary);">— Moazzin Zaman, Founder & CEO</p>
+        </div>
+
+        <!-- Team -->
+        <div style="margin: 3rem 0;">
+            <h2>Our Team</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">A dedicated team of industry experts committed to your success.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Moazzin Zaman</h4>
+                        <div class="team-role">Founder & CEO</div>
+                        <p class="team-bio">Strategic leader with deep expertise in lead generation, business scaling, and service industry operations. Passionate about contractor success.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Operations Lead</h4>
+                        <div class="team-role">Client Success Manager</div>
+                        <p class="team-bio">Ensures smooth operations and maximum client satisfaction. Manages relationships and optimizes contractor performance.</p>
+                    </div>
+                </div>
+
+                <div class="team-member">
+                    <div class="team-avatar">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="team-info">
+                        <h4>Strategy Specialist</h4>
+                        <div class="team-role">Growth & Marketing</div>
+                        <p class="team-bio">Develops innovative growth strategies and marketing campaigns. Helps contractors reach their full potential with data-driven insights.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; margin: 3rem 0;">
+            <h2 style="margin-top: 0;">Why Contractors Trust Apex Leads</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check"></i> Founded by Industry Expert</h4>
+                    <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Moazzin understands contractor challenges firsthand.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check"></i> Proven Track Record</h4>
+                    <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">500+ contractors, £2.5M+ revenue, 92% satisfaction.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check"></i> Long-Term Partnership</h4>
+                    <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">We grow with you, not just during the first month.</p>
+                </div>
+                <div>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check"></i> Continuous Improvement</h4>
+                    <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">We're constantly evolving to serve you better.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+        <h2>Join Our Community of Successful Contractors</h2>
+        <p>Be part of the revolution in lead generation for service professionals</p>
+        <a href="index.html#contact" class="scroll-link" style="display: inline-block; background: var(--primary); color: black; padding: 1rem 2.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin-top: 1.5rem;">
+            Get Started Today
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-chart-line"></i> Apex Leads Analytics</h3>
+                <p>Professional lead generation for service contractors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="case-studies.html">Results</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +44 (0) 7456 522 980</p>
+                <p>Email: Moazzin.zaman@outlook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Leads Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

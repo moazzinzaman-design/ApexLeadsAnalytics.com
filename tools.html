@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Tools & Calculators - Apex Leads Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .tool-card {
+            background: rgba(21, 29, 59, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .tool-card:hover {
+            border-color: rgba(0, 212, 255, 0.5);
+            transform: translateY(-5px);
+        }
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .calculator {
+            background: rgba(21, 29, 59, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            margin: 2rem 0;
+        }
+        .calc-input {
+            margin-bottom: 1.5rem;
+        }
+        .calc-input label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .calc-input input {
+            width: 100%;
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+        }
+        .calc-input input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.2);
+        }
+        .calc-result {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.15) 0%, rgba(124, 58, 237, 0.15) 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            margin-top: 1.5rem;
+        }
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+        .result-item:last-child {
+            border-bottom: none;
+        }
+        .result-label {
+            color: var(--text-secondary);
+        }
+        .result-value {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        .calc-button {
+            width: 100%;
+            padding: 0.875rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: black;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .calc-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Futuristic Background -->
+    <div class="lightning-bg">
+        <div class="stars-bg"></div>
+        <div class="clouds-bg"></div>
+        <div class="tech-grid"></div>
+        <div class="ambient-glow"></div>
+        <div class="electrical-field"></div>
+        <div class="lightning-container">
+            <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
+                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
+                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
+                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
+                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+            </svg>
+        </div>
+        <div class="particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Apex Leads</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Results</a></li>
+                    <li><a href="industries.html" class="nav-link">Industries</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="index.html#contact" class="nav-link cta-btn">Get Started</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-page-hero">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Tools</span>
+        </div>
+        <h1>🤖 Free Tools & Calculators</h1>
+        <p>Interactive tools to help you plan your lead generation strategy</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="service-content container">
+        <!-- Tool Overview -->
+        <div>
+            <h2 style="margin-bottom: 2rem;">Available Tools</h2>
+            <div class="tool-grid">
+                <div class="tool-card" onclick="scrollToCalculator('roi-calc')">
+                    <div class="tool-icon" style="color: var(--primary);">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Lead Gen ROI Calculator</h3>
+                    <p>Calculate your potential ROI based on lead cost, conversion rate, and average job value.</p>
+                    <span style="color: var(--primary); font-weight: 600;">Try Now →</span>
+                </div>
+
+                <div class="tool-card" onclick="scrollToCalculator('lead-cost-calc')">
+                    <div class="tool-icon" style="color: #FF9500;">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Lead Cost Calculator</h3>
+                    <p>Estimate your ideal lead cost based on your business model and profit targets.</p>
+                    <span style="color: var(--primary); font-weight: 600;">Try Now →</span>
+                </div>
+
+                <div class="tool-card" onclick="scrollToCalculator('revenue-calc')">
+                    <div class="tool-icon" style="color: #00ff88;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Revenue Projection Tool</h3>
+                    <p>Project your annual revenue based on leads per month and average job value.</p>
+                    <span style="color: var(--primary); font-weight: 600;">Try Now →</span>
+                </div>
+
+                <div class="tool-card" onclick="scrollToCalculator('break-even-calc')">
+                    <div class="tool-icon" style="color: #7c3aed;">
+                        <i class="fas fa-target"></i>
+                    </div>
+                    <h3>Break-Even Calculator</h3>
+                    <p>Find your break-even point and understand your business profitability timeline.</p>
+                    <span style="color: var(--primary); font-weight: 600;">Try Now →</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROI Calculator -->
+        <div id="roi-calc" class="calculator">
+            <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-percentage"></i> Lead Gen ROI Calculator</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Calculate your potential return on investment with our lead generation system.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <div class="calc-input">
+                        <label>Monthly Lead Budget (£)</label>
+                        <input type="number" id="roiBudget" value="500" min="0" oninput="calculateROI()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Cost Per Lead (£)</label>
+                        <input type="number" id="roiLeadCost" value="25" min="1" step="0.5" oninput="calculateROI()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Conversion Rate (%)</label>
+                        <input type="number" id="roiConversion" value="30" min="1" max="100" step="1" oninput="calculateROI()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Average Job Value (£)</label>
+                        <input type="number" id="roiJobValue" value="300" min="0" step="10" oninput="calculateROI()">
+                    </div>
+                </div>
+                <div class="calc-result" id="roiResult">
+                    <div class="result-item">
+                        <span class="result-label">Monthly Leads:</span>
+                        <span class="result-value" id="roiLeads">20</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Monthly Conversions:</span>
+                        <span class="result-value" id="roiConversions">6</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Monthly Revenue:</span>
+                        <span class="result-value" id="roiRevenue">£1,800</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Monthly Profit:</span>
+                        <span class="result-value" id="roiProfit">£1,300</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">ROI:</span>
+                        <span class="result-value" id="roiPercentage">260%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lead Cost Calculator -->
+        <div id="lead-cost-calc" class="calculator">
+            <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-calculator"></i> Lead Cost Calculator</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Determine your ideal cost per lead based on your business goals.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <div class="calc-input">
+                        <label>Average Job Value (£)</label>
+                        <input type="number" id="lcJobValue" value="400" min="0" step="10" oninput="calculateLeadCost()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Expected Conversion Rate (%)</label>
+                        <input type="number" id="lcConversion" value="35" min="1" max="100" step="1" oninput="calculateLeadCost()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Target Profit Margin (%)</label>
+                        <input type="number" id="lcMargin" value="60" min="1" max="100" step="1" oninput="calculateLeadCost()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Monthly Target Revenue (£)</label>
+                        <input type="number" id="lcRevenue" value="5000" min="0" step="100" oninput="calculateLeadCost()">
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="result-item">
+                        <span class="result-label">Max Cost Per Lead:</span>
+                        <span class="result-value" id="lcMaxCost">£48</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Required Leads/Month:</span>
+                        <span class="result-value" id="lcLeadsNeeded">36</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Monthly Lead Budget:</span>
+                        <span class="result-value" id="lcBudget">£1,714</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Recommended Strategy:</span>
+                        <span class="result-value" id="lcStrategy" style="font-size: 0.9rem;">Monthly Sub</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Projection -->
+        <div id="revenue-calc" class="calculator">
+            <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-chart-line"></i> Revenue Projection Tool</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Project your annual revenue potential.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <div class="calc-input">
+                        <label>Leads Per Month</label>
+                        <input type="number" id="revLeads" value="30" min="1" step="1" oninput="calculateRevenue()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Conversion Rate (%)</label>
+                        <input type="number" id="revConversion" value="33" min="1" max="100" step="1" oninput="calculateRevenue()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Average Job Value (£)</label>
+                        <input type="number" id="revJobValue" value="350" min="0" step="10" oninput="calculateRevenue()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Cost Per Lead (£)</label>
+                        <input type="number" id="revLeadCost" value="20" min="0" step="1" oninput="calculateRevenue()">
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="result-item">
+                        <span class="result-label">Monthly Revenue:</span>
+                        <span class="result-value" id="revMonthly">£3,465</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Annual Revenue:</span>
+                        <span class="result-value" id="revAnnual">£41,580</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Monthly Costs:</span>
+                        <span class="result-value" id="revCosts">£600</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Annual Profit:</span>
+                        <span class="result-value" id="revProfit">£34,380</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Break-Even Calculator -->
+        <div id="break-even-calc" class="calculator">
+            <h3 style="margin-bottom: 1.5rem;"><i class="fas fa-target"></i> Break-Even Calculator</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">Find when you'll reach profitability.</p>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                <div>
+                    <div class="calc-input">
+                        <label>Monthly Marketing Budget (£)</label>
+                        <input type="number" id="beMarketing" value="400" min="0" step="50" oninput="calculateBreakEven()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Monthly Operating Costs (£)</label>
+                        <input type="number" id="beOperating" value="200" min="0" step="50" oninput="calculateBreakEven()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Average Job Value (£)</label>
+                        <input type="number" id="beJobValue" value="300" min="0" step="10" oninput="calculateBreakEven()">
+                    </div>
+                    <div class="calc-input">
+                        <label>Expected Conversion Rate (%)</label>
+                        <input type="number" id="beConversion" value="30" min="1" max="100" step="1" oninput="calculateBreakEven()">
+                    </div>
+                </div>
+                <div class="calc-result">
+                    <div class="result-item">
+                        <span class="result-label">Daily Costs:</span>
+                        <span class="result-value" id="beDailyCost">£20</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Leads Needed Daily:</span>
+                        <span class="result-value" id="beLeadsDaily">2.2</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Months to Break-Even:</span>
+                        <span class="result-value" id="beMonths">2-3</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">Status:</span>
+                        <span class="result-value" id="beStatus" style="color: #00ff88;">✓ Achievable</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+        <h2>Ready to See Your Potential?</h2>
+        <p>Start with one of our tools and let's plan your lead generation strategy</p>
+        <a href="index.html#contact" class="scroll-link" style="display: inline-block; background: var(--primary); color: black; padding: 1rem 2.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin-top: 1.5rem;">
+            Book Consultation
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-chart-line"></i> Apex Leads Analytics</h3>
+                <p>Professional lead generation for service contractors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="case-studies.html">Results</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +44 (0) 7456 522 980</p>
+                <p>Email: Moazzin.zaman@outlook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Leads Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // ROI Calculator
+        function calculateROI() {
+            const budget = parseFloat(document.getElementById('roiBudget').value) || 0;
+            const leadCost = parseFloat(document.getElementById('roiLeadCost').value) || 1;
+            const conversion = parseFloat(document.getElementById('roiConversion').value) / 100 || 0;
+            const jobValue = parseFloat(document.getElementById('roiJobValue').value) || 0;
+            
+            const leads = Math.floor(budget / leadCost);
+            const conversions = Math.floor(leads * conversion);
+            const revenue = conversions * jobValue;
+            const profit = revenue - budget;
+            const roi = ((profit / budget) * 100).toFixed(0);
+            
+            document.getElementById('roiLeads').textContent = leads;
+            document.getElementById('roiConversions').textContent = conversions;
+            document.getElementById('roiRevenue').textContent = '£' + revenue.toLocaleString();
+            document.getElementById('roiProfit').textContent = '£' + profit.toLocaleString();
+            document.getElementById('roiPercentage').textContent = roi + '%';
+        }
+
+        // Lead Cost Calculator
+        function calculateLeadCost() {
+            const jobValue = parseFloat(document.getElementById('lcJobValue').value) || 0;
+            const conversion = parseFloat(document.getElementById('lcConversion').value) / 100 || 0;
+            const margin = parseFloat(document.getElementById('lcMargin').value) / 100 || 0;
+            const targetRevenue = parseFloat(document.getElementById('lcRevenue').value) || 0;
+            
+            const maxCost = (jobValue * conversion * margin).toFixed(2);
+            const leadsNeeded = Math.ceil(targetRevenue / (jobValue * conversion));
+            const budget = (leadsNeeded * maxCost).toFixed(0);
+            const strategy = leadsNeeded > 50 ? 'Monthly Sub' : 'Pay-Per-Lead';
+            
+            document.getElementById('lcMaxCost').textContent = '£' + maxCost;
+            document.getElementById('lcLeadsNeeded').textContent = leadsNeeded;
+            document.getElementById('lcBudget').textContent = '£' + budget.toLocaleString();
+            document.getElementById('lcStrategy').textContent = strategy;
+        }
+
+        // Revenue Projection
+        function calculateRevenue() {
+            const leads = parseFloat(document.getElementById('revLeads').value) || 0;
+            const conversion = parseFloat(document.getElementById('revConversion').value) / 100 || 0;
+            const jobValue = parseFloat(document.getElementById('revJobValue').value) || 0;
+            const leadCost = parseFloat(document.getElementById('revLeadCost').value) || 0;
+            
+            const conversions = Math.floor(leads * conversion);
+            const monthlyRevenue = conversions * jobValue;
+            const annualRevenue = monthlyRevenue * 12;
+            const monthlyCosts = leads * leadCost;
+            const annualProfit = (monthlyRevenue - monthlyCosts) * 12;
+            
+            document.getElementById('revMonthly').textContent = '£' + monthlyRevenue.toLocaleString();
+            document.getElementById('revAnnual').textContent = '£' + annualRevenue.toLocaleString();
+            document.getElementById('revCosts').textContent = '£' + monthlyCosts.toLocaleString();
+            document.getElementById('revProfit').textContent = '£' + annualProfit.toLocaleString();
+        }
+
+        // Break-Even Calculator
+        function calculateBreakEven() {
+            const marketing = parseFloat(document.getElementById('beMarketing').value) || 0;
+            const operating = parseFloat(document.getElementById('beOperating').value) || 0;
+            const jobValue = parseFloat(document.getElementById('beJobValue').value) || 0;
+            const conversion = parseFloat(document.getElementById('beConversion').value) / 100 || 0;
+            
+            const totalCosts = marketing + operating;
+            const dailyCosts = (totalCosts / 30).toFixed(2);
+            const revenuePerLead = jobValue * conversion;
+            const leadsDaily = (totalCosts / 30 / revenuePerLead).toFixed(2);
+            const months = (totalCosts / (revenuePerLead * 25)).toFixed(1);
+            
+            document.getElementById('beDailyCost').textContent = '£' + dailyCosts;
+            document.getElementById('beLeadsDaily').textContent = leadsDaily;
+            document.getElementById('beMonths').textContent = months + ' months';
+            document.getElementById('beStatus').textContent = months < 6 ? '✓ Achievable' : '⚠ Challenging';
+        }
+
+        // Scroll to calculator
+        function scrollToCalculator(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Initialize calculators on page load
+        window.addEventListener('load', () => {
+            calculateROI();
+            calculateLeadCost();
+            calculateRevenue();
+            calculateBreakEven();
+        });
+    </script>
+</body>
+</html>

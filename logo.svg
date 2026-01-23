@@ -1,0 +1,35 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Outer circle background -->
+  <circle cx="100" cy="100" r="95" fill="rgba(0, 212, 255, 0.1)" stroke="url(#logoGradient)" stroke-width="2"/>
+  
+  <!-- Chart/Analytics elements -->
+  <g filter="url(#glow)">
+    <!-- Bar chart -->
+    <rect x="50" y="120" width="15" height="40" fill="url(#logoGradient)" rx="3"/>
+    <rect x="75" y="100" width="15" height="60" fill="url(#logoGradient)" rx="3"/>
+    <rect x="100" y="80" width="15" height="80" fill="url(#logoGradient)" rx="3"/>
+    <rect x="125" y="110" width="15" height="50" fill="url(#logoGradient)" rx="3"/>
+    
+    <!-- Upward arrow -->
+    <path d="M 160 140 L 160 60 M 150 70 L 160 60 L 170 70" stroke="url(#logoGradient)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Dollar sign accent -->
+    <circle cx="100" cy="40" r="8" fill="none" stroke="#ff006e" stroke-width="2"/>
+    <text x="100" y="45" text-anchor="middle" font-size="14" font-weight="bold" fill="#ff006e">$</text>
+  </g>
+</svg>

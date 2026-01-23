@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Call - Apex Leads Analytics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .booking-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .booking-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+        .booking-form {
+            background: rgba(21, 29, 59, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem;
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.3s ease;
+        }
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        .time-slots {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .time-slot {
+            padding: 0.75rem;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        .time-slot:hover {
+            border-color: var(--primary);
+            background: rgba(0, 212, 255, 0.1);
+        }
+        .time-slot.selected {
+            background: var(--primary);
+            color: black;
+            border-color: var(--primary);
+            font-weight: 600;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: black;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+        .booking-details {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .detail-card {
+            background: rgba(21, 29, 59, 0.6);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+        }
+        .detail-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+        }
+        .detail-card h3 {
+            margin: 0 0 0.75rem 0;
+            color: var(--text-primary);
+        }
+        .detail-card p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .benefits-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+        .benefits-list li {
+            color: var(--text-secondary);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        .benefits-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 700;
+        }
+        .calendar-view {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        .calendar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 0.5rem;
+        }
+        .calendar-day {
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        .calendar-day:hover {
+            border-color: var(--primary);
+            background: rgba(0, 212, 255, 0.2);
+        }
+        .calendar-day.available {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        .calendar-day.unavailable {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        @media (max-width: 768px) {
+            .booking-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Futuristic Background -->
+    <div class="lightning-bg">
+        <div class="stars-bg"></div>
+        <div class="clouds-bg"></div>
+        <div class="tech-grid"></div>
+        <div class="ambient-glow"></div>
+        <div class="electrical-field"></div>
+        <div class="lightning-container">
+            <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
+                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
+                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
+                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
+                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+            </svg>
+        </div>
+        <div class="particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Apex Leads</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Results</a></li>
+                    <li><a href="industries.html" class="nav-link">Industries</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="book-call.html" class="nav-link cta-btn">Book a Call</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="service-page-hero">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            <span>Book a Call</span>
+        </div>
+        <h1>📞 Book a Consultation</h1>
+        <p>Let's discuss your lead generation strategy and growth potential</p>
+    </section>
+
+    <!-- Main Content -->
+    <section class="service-content container">
+        <div class="booking-container">
+            <div class="booking-grid">
+                <!-- Booking Form -->
+                <div class="booking-form">
+                    <h2 style="margin-top: 0;">Schedule Your Call</h2>
+                    <form onsubmit="handleBooking(event)">
+                        <div class="form-group">
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="John Smith">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="john@example.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+44 (0) 7456 522 980">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Your Service Type *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Select your service</option>
+                                <option value="House Cleaning">House Cleaning</option>
+                                <option value="Carpet Cleaning">Carpet Cleaning</option>
+                                <option value="Pressure Washing">Pressure Washing</option>
+                                <option value="Gutter Cleaning">Gutter Cleaning</option>
+                                <option value="Garden Maintenance">Garden Maintenance</option>
+                                <option value="Car Detailing">Car Detailing</option>
+                                <option value="Electrician">Electrician</option>
+                                <option value="Plumber">Plumber</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Preferred Date *</label>
+                            <input type="date" id="date" name="date" required min="">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Preferred Time *</label>
+                            <div class="time-slots">
+                                <div class="time-slot" onclick="selectTime(this, '09:00')">09:00 AM</div>
+                                <div class="time-slot" onclick="selectTime(this, '10:00')">10:00 AM</div>
+                                <div class="time-slot" onclick="selectTime(this, '11:00')">11:00 AM</div>
+                                <div class="time-slot" onclick="selectTime(this, '02:00')">02:00 PM</div>
+                                <div class="time-slot" onclick="selectTime(this, '03:00')">03:00 PM</div>
+                                <div class="time-slot" onclick="selectTime(this, '04:00')">04:00 PM</div>
+                            </div>
+                            <input type="hidden" id="time" name="time" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Tell Us About Your Business (Optional)</label>
+                            <textarea id="message" name="message" placeholder="Current revenue, team size, growth goals..."></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Confirm Booking</button>
+                    </form>
+                </div>
+
+                <!-- Booking Details -->
+                <div class="booking-details">
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Call Duration</h3>
+                        <p>30-minute one-on-one consultation with our lead generation specialist.</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3>How It Works</h3>
+                        <p>We'll connect via Zoom or phone at your preferred time. No need to download anything — we'll send you the link via email.</p>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-checkmark"></i>
+                        </div>
+                        <h3>What to Expect</h3>
+                        <ul class="benefits-list">
+                            <li>Industry & market analysis for your niche</li>
+                            <li>Custom lead generation strategy</li>
+                            <li>ROI projections for your business</li>
+                            <li>Personalized pricing & package recommendations</li>
+                            <li>Next steps and implementation timeline</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-question-circle"></i>
+                        </div>
+                        <h3>Have Questions?</h3>
+                        <p>Can't find a time that works? <strong>Call us directly:</strong></p>
+                        <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin: 0.5rem 0 0 0;">+44 (0) 7456 522 980</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0 0 0;">Available Monday - Friday, 9AM - 6PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Book a Call -->
+            <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; margin: 3rem 0;">
+                <h2 style="margin-top: 0;">Why Book a Consultation?</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-target"></i> Personalized Strategy</h4>
+                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">We develop a custom plan specific to your business, market, and goals.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-chart-line"></i> ROI Projection</h4>
+                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Get accurate revenue projections based on your niche and capacity.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-handshake"></i> Expert Guidance</h4>
+                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Learn from industry experts who understand your challenges.</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-gift"></i> Exclusive Offer</h4>
+                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Get special pricing and bonuses when you book a consultation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success Stories Quick -->
+            <div style="background: rgba(21, 29, 59, 0.6); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; margin: 3rem 0; text-align: center;">
+                <h2 style="margin-top: 0;">Recent Consultation Results</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                    <div>
+                        <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0;">↑ 280%</p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Average Revenue Growth</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0;">3-4 weeks</p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">To First Quality Leads</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0;">92%</p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Client Satisfaction</p>
+                    </div>
+                    <div>
+                        <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0;">500+</p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Active Contractors</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="service-cta">
+        <h2>Your Growth Starts Here</h2>
+        <p>Book a call today and let's plan your path to scaling your business</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3><i class="fas fa-chart-line"></i> Apex Leads Analytics</h3>
+                <p>Professional lead generation for service contractors.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="case-studies.html">Results</a></li>
+                    <li><a href="industries.html">Industries</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p>Phone: +44 (0) 7456 522 980</p>
+                <p>Email: Moazzin.zaman@outlook.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Apex Leads Analytics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Set minimum date to today
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+        function selectTime(element, time) {
+            document.querySelectorAll('.time-slot').forEach(slot => slot.classList.remove('selected'));
+            element.classList.add('selected');
+            document.getElementById('time').value = time;
+        }
+
+        function handleBooking(event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            
+            if (!time) {
+                alert('Please select a preferred time');
+                return;
+            }
+
+            // Create a message
+            const message = `
+Consultation Booking Confirmation:
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Service: ${service}
+Date: ${date}
+Time: ${time}
+
+Thank you for booking! We'll send you a confirmation email shortly.
+            `;
+
+            // Show confirmation
+            alert('Thank you for booking! We will send you a confirmation email at ' + email + ' with your Zoom link and meeting details.');
+            
+            // Reset form
+            event.target.reset();
+            document.querySelectorAll('.time-slot').forEach(slot => slot.classList.remove('selected'));
+        }
+    </script>
+</body>
+</html>

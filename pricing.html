@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Apex Leads Analytics | Lead Generation Plans</title>
+    <meta name="description" content="Flexible pricing for lead generation. Choose pay-per-lead, monthly subscription, or commission-based. All plans include verified leads and real-time notifications.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="services-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Pricing Page Specific Styles */
+        .pricing-hero {
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.08) 100%);
+            padding: 100px 20px;
+            margin-top: 60px;
+            text-align: center;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .pricing-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #ff006e 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            animation: slideDown 0.6s ease;
+        }
+
+        .pricing-hero .subtitle {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            animation: slideUp 0.6s ease 0.1s backwards;
+        }
+
+        .pricing-hero .tagline {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            animation: fadeIn 0.8s ease 0.2s backwards;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Payment Models Section */
+        .payment-models-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .payment-models-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideDown 0.6s ease;
+        }
+
+        .section-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 0.8s ease 0.2s backwards;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .model-card {
+            background: rgba(21, 29, 59, 0.6);
+            border: 2px solid rgba(0, 212, 255, 0.15);
+            border-radius: 15px;
+            padding: 2.5rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 0.6s ease backwards;
+        }
+
+        .model-card:nth-child(1) { animation-delay: 0s; }
+        .model-card:nth-child(2) { animation-delay: 0.1s; }
+        .model-card:nth-child(3) { animation-delay: 0.2s; }
+
+        .model-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #00d4ff, #7c3aed);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            background: rgba(21, 29, 59, 0.8);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.1);
+        }
+
+        .model-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .model-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .model-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .model-price {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .model-period {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .model-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            min-height: 60px;
+        }
+
+        .model-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1.5rem 0;
+        }
+
+        .model-features li {
+            padding: 0.6rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .model-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .model-card .btn {
+            width: 100%;
+            text-decoration: none;
+            text-align: center;
+            display: inline-block;
+            padding: 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: auto;
+        }
+
+        /* Services by Category Section */
+        .services-category-section {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.03) 0%, rgba(124, 58, 237, 0.03) 100%);
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .services-category-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .category-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-category {
+            margin-bottom: 3rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .category-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(124, 58, 237, 0.2));
+            border-radius: 10px;
+            color: var(--primary);
+        }
+
+        .category-header h3 {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .service-item {
+            background: rgba(21, 29, 59, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #00d4ff, #7c3aed, #ff006e);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            background: rgba(21, 29, 59, 0.7);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.1);
+        }
+
+        .service-item:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .service-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .service-price-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .service-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #00d4ff, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .service-badge {
+            background: rgba(0, 212, 255, 0.1);
+            color: var(--primary);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        /* Pricing Table Section */
+        .pricing-table-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing-table-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .table-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(21, 29, 59, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 12px;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .comparison-table thead {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(124, 58, 237, 0.1));
+            border-bottom: 2px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .comparison-table th {
+            padding: 1.5rem;
+            text-align: left;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .comparison-table td {
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+            color: var(--text-secondary);
+        }
+
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison-table tr:hover td {
+            background: rgba(0, 212, 255, 0.05);
+        }
+
+        .feature-check {
+            color: #00ff88;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* FAQ Section */
+        .pricing-faq-section {
+            padding: 80px 20px;
+            background: linear-gradient(180deg, rgba(0, 212, 255, 0.03) 0%, rgba(124, 58, 237, 0.03) 100%);
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .pricing-faq-section h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .faq-intro {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .faq-card {
+            background: rgba(21, 29, 59, 0.5);
+            border: 1px solid rgba(0, 212, 255, 0.15);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .faq-card:hover {
+            border-color: var(--primary);
+            background: rgba(21, 29, 59, 0.7);
+        }
+
+        .faq-card h4 {
+            color: var(--primary);
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .faq-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* CTA Section */
+        .pricing-cta-section {
+            padding: 80px 20px;
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.08), rgba(124, 58, 237, 0.08));
+            border-top: 1px solid rgba(0, 212, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+            text-align: center;
+        }
+
+        .pricing-cta-section h2 {
+            font-size: 2.3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .pricing-cta-section p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .pricing-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .pricing-hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .payment-models-section h2,
+            .services-category-section h2,
+            .pricing-table-section h2,
+            .pricing-faq-section h2 {
+                font-size: 1.8rem;
+            }
+
+            .model-card,
+            .faq-card {
+                padding: 1.5rem;
+            }
+
+            .models-grid,
+            .service-grid,
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .comparison-table {
+                font-size: 0.9rem;
+            }
+
+            .comparison-table th,
+            .comparison-table td {
+                padding: 1rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+            }
+
+            .category-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .category-icon {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Futuristic Background with Stars, Clouds, and Lightning -->
+    <div class="lightning-bg">
+        <!-- Star Field Layer -->
+        <div class="stars-bg"></div>
+        
+        <!-- Cloud Layer -->
+        <div class="clouds-bg"></div>
+        
+        <!-- Tech Grid Pattern -->
+        <div class="tech-grid"></div>
+        
+        <!-- Ambient Glow -->
+        <div class="ambient-glow"></div>
+        
+        <!-- Electrical Field -->
+        <div class="electrical-field"></div>
+        
+        <!-- Lightning Bolts -->
+        <div class="lightning-container">
+            <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
+                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
+                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
+                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+            </svg>
+            <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
+                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+            </svg>
+        </div>
+        
+        <!-- Floating Particles -->
+        <div class="particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <i class="fas fa-rocket"></i>
+                    <span>Apex Leads</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                    <li><a href="case-studies.html" class="nav-link">Results</a></li>
+                    <li><a href="industries.html" class="nav-link">Industries</a></li>
+                    <li><a href="resources.html" class="nav-link">Resources</a></li>
+                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+                    <li><a href="tools.html" class="nav-link">Tools</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="book-call.html" class="nav-link cta-btn">Book a Call</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pricing-hero">
+        <h1>Simple, Transparent Pricing</h1>
+        <p class="subtitle">Choose the plan that works for your business</p>
+        <p class="tagline">No hidden fees, no long-term contracts. Pay only for what you use and grow your lead generation business with confidence.</p>
+    </section>
+
+    <!-- Payment Models Section -->
+    <section class="payment-models-section">
+        <h2>Payment Models</h2>
+        <p class="section-intro">Select the pricing model that best fits your business needs. All plans include verified leads and real-time notifications.</p>
+
+        <div class="models-grid">
+            <!-- Pay Per Lead -->
+            <div class="model-card">
+                <div class="model-badge">Most Popular</div>
+                <h3 class="model-title">Pay Per Lead</h3>
+                <div class="model-price">£10–£30</div>
+                <p class="model-period">per qualified lead</p>
+                <p class="model-description">Perfect for businesses that want full control over their lead spend and prefer to pay only for what they receive.</p>
+                <ul class="model-features">
+                    <li>No monthly commitment</li>
+                    <li>Cancel anytime</li>
+                    <li>Only pay for actual leads</li>
+                    <li>Detailed lead analytics</li>
+                    <li>Lead quality guarantee</li>
+                </ul>
+                <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <!-- Monthly Subscription -->
+            <div class="model-card">
+                <div class="model-badge">For Growth</div>
+                <h3 class="model-title">Monthly Subscription</h3>
+                <div class="model-price">£200–£500</div>
+                <p class="model-period">per month</p>
+                <p class="model-description">Ideal for businesses seeking consistent, predictable growth with unlimited leads in their service area.</p>
+                <ul class="model-features">
+                    <li>Unlimited qualified leads</li>
+                    <li>Priority lead placement</li>
+                    <li>Dedicated account manager</li>
+                    <li>Monthly performance reports</li>
+                    <li>Flexible billing cycle</li>
+                </ul>
+                <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+            </div>
+
+            <!-- Commission Per Job -->
+            <div class="model-card">
+                <div class="model-badge">Zero Upfront</div>
+                <h3 class="model-title">Commission Per Job</h3>
+                <div class="model-price">20–40%</div>
+                <p class="model-period">of completed job value</p>
+                <p class="model-description">Great for new businesses or those seeking zero upfront costs. You only pay when you actually complete a job.</p>
+                <ul class="model-features">
+                    <li>Zero upfront investment</li>
+                    <li>Transparent commission structure</li>
+                    <li>Fast payment processing</li>
+                    <li>Suitable for all business sizes</li>
+                    <li>Scale with your growth</li>
+                </ul>
+                <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services by Category -->
+    <section class="services-category-section">
+        <h2>Services & Lead Pricing</h2>
+        <p class="category-intro">Browse our categorized services with transparent lead pricing. Prices vary by service complexity and location demand.</p>
+
+        <div class="services-container">
+            <!-- Cleaning Services -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3>Cleaning Services</h3>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <div class="service-name">House Cleaning</div>
+                        <p class="service-description">Residential house cleaning leads including interior and exterior services.</p>
+                        <div class="service-price-wrapper">
+                            <span class="service-price">£15–£25</span>
+                            <span class="service-badge">Per Lead</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Carpet Cleaning</div>
+                        <p class="service-description">Specialized carpet cleaning service leads for homes and businesses.</p>
+                        <div class="service-price-wrapper">
+                            <span class="service-price">£20–£30</span>
+                            <span class="service-badge">Per Lead</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Gutter Cleaning</div>
+                        <p class="service-description">High-demand gutter and downpipe cleaning service leads.</p>
+                        <div class="service-price-wrapper">
+                            <span class="service-price">£12–£22</span>
+                            <span class="service-badge">Per Lead</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Outdoor Services -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-tree"></i>
+                    </div>
+                    <h3>Outdoor & Maintenance</h3>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <div class="service-name">Pressure Washing</div>
+                        <p class="service-description">Driveway, patio, and exterior pressure washing service leads.</p>
+                        <div class="service-price-wrapper">
+                            <span class="service-price">£18–£28</span>
+                            <span class="service-badge">Per Lead</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Garden Maintenance</div>
+                        <p class="service-description">Regular garden upkeep and landscaping service leads.</p>
+                        <div class="service-price-wrapper">
+                            <span class="service-price">£14–£24</span>
+                            <span class="service-badge">Per Lead</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Gutter Clearing</div>
+                        <p class="service-description">Seasonal gutter clearing and maintenance service leads.</p>
+                        <div class="service-price-wrapper">
+                            <span class="service-price">£12–£20</span>
+                            <span class="service-badge">Per Lead</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Specialist Services -->
+            <div class="service-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <h3>Specialist Services</h3>
+                </div>
+                <div class="service-grid">
+                    <div class="service-item">
+                        <div class="service-name">Car Detailing</div>
+                        <p class="service-description">Premium car detailing and valeting service leads.</p>
+                        <div class="service-price-wrapper">
+                            <span class="service-price">£20–£30</span>
+                            <span class="service-badge">Per Lead</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Window Cleaning</div>
+                        <p class="service-description">Residential and commercial window cleaning service leads.</p>
+                        <div class="service-price-wrapper">
+                            <span class="service-price">£10–£18</span>
+                            <span class="service-badge">Per Lead</span>
+                        </div>
+                    </div>
+
+                    <div class="service-item">
+                        <div class="service-name">Other Services</div>
+                        <p class="service-description">Additional local service leads available on request.</p>
+                        <div class="service-price-wrapper">
+                            <span class="service-price">£15–£25</span>
+                            <span class="service-badge">Per Lead</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Comparison Table -->
+    <section class="pricing-table-section">
+        <h2>Feature Comparison</h2>
+        <p class="table-intro">See what's included in each payment model at a glance.</p>
+
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Pay Per Lead</th>
+                    <th>Monthly Subscription</th>
+                    <th>Commission Based</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Lead Quality Guarantee</strong></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Real-Time Notifications</strong></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Email, WhatsApp & SMS</strong></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Lead Analytics Dashboard</strong></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td><strong>No Contract Required</strong></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Cancel Anytime</strong></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td><span class="feature-check">✓</span></td>
+                </tr>
+                <tr>
+                    <td><strong>Dedicated Support</strong></td>
+                    <td>Email Support</td>
+                    <td><span class="feature-check">✓</span> Priority</td>
+                    <td>Email Support</td>
+                </tr>
+                <tr>
+                    <td><strong>Account Manager</strong></td>
+                    <td>—</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly Reports</strong></td>
+                    <td>—</td>
+                    <td><span class="feature-check">✓</span></td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td><strong>Service Fulfillment</strong></td>
+                    <td>Optional</td>
+                    <td>Optional</td>
+                    <td><span class="feature-check">✓</span> Available</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="pricing-faq-section">
+        <h2>Pricing FAQ</h2>
+        <p class="faq-intro">Have questions about our pricing? Find answers to common questions below.</p>
+
+        <div class="faq-grid">
+            <div class="faq-card">
+                <h4>Do you have setup fees?</h4>
+                <p>No. There are no setup fees, onboarding fees, or hidden charges. You start paying only when you receive your first lead.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>Can I switch payment plans?</h4>
+                <p>Yes. You can switch between payment models anytime. Simply contact us, and we'll help transition your account with no penalties.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>What if a lead doesn't convert?</h4>
+                <p>You still pay for the lead. However, we guarantee lead quality and responsive customers. Our leads come from real, verified inquiries.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>Are there minimum purchase requirements?</h4>
+                <p>No. With pay-per-lead, buy as few or as many leads as you need. With subscriptions, cancel anytime with no penalties.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>How are leads delivered?</h4>
+                <p>Instantly. You receive notifications via email, WhatsApp, or SMS within seconds of a customer inquiry. Real-time delivery means you respond first.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>What service areas do you cover?</h4>
+                <p>We operate across the UK. Lead prices may vary by location due to demand, competition, and service complexity in your area.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>Can I get leads for multiple services?</h4>
+                <p>Absolutely. You can receive leads for one service or multiple services. Each service has its own pricing and can be managed independently.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>Do you offer volume discounts?</h4>
+                <p>Yes. For subscription models and high-volume lead purchases, we offer custom pricing. Contact us to discuss your specific needs.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>How do I track my spending?</h4>
+                <p>Our dashboard provides real-time analytics. Track leads received, conversion rates, spending, and ROI all in one place. Detailed reports available.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="pricing-cta-section">
+        <h2>Ready to Start Growing Your Business?</h2>
+        <p>Choose your plan and start receiving qualified leads today. No credit card required to get started.</p>
+        <div class="cta-buttons">
+            <a href="index.html#contact" class="btn btn-primary">Get Started Now</a>
+            <a href="how-it-works.html" class="btn btn-secondary">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="services-contact">
+        <h2>Questions About Pricing?</h2>
+        <p>Contact our team for custom quotes, volume discounts, or to discuss your specific needs.</p>
+        <div class="contact-boxes">
+            <div class="contact-box">
+                <h3>📞 Call</h3>
+                <a href="tel:07456522980">07456 522 980</a>
+            </div>
+            <div class="contact-box">
+                <h3>📧 Email</h3>
+                <a href="mailto:Moazzin.zaman@outlook.com">Moazzin.zaman@outlook.com</a>
+            </div>
+            <div class="contact-box">
+                <h3>💬 WhatsApp</h3>
+                <a href="https://wa.me/447456522980" target="_blank">Message us on WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Apex Leads Analytics</h4>
+                    <p>Your Lead Generation & Local Service Growth Partner</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="house-cleaning.html">House Cleaning</a></li>
+                        <li><a href="pressure-washing.html">Pressure Washing</a></li>
+                        <li><a href="gutter-cleaning.html">Gutter Cleaning</a></li>
+                        <li><a href="car-detailing.html">Car Detailing</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Apex Leads Analytics. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
