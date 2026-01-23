@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,41 +10,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+
 <body>
     <!-- Enhanced Futuristic Background with Stars, Clouds, and Lightning -->
     <div class="lightning-bg">
-        <!-- Star Field Layer -->
         <div class="stars-bg"></div>
-        
-        <!-- Cloud Layer -->
         <div class="clouds-bg"></div>
-        
-        <!-- Tech Grid Pattern -->
         <div class="tech-grid"></div>
-        
-        <!-- Ambient Glow -->
         <div class="ambient-glow"></div>
-        
-        <!-- Electrical Field -->
         <div class="electrical-field"></div>
-        
-        <!-- Lightning Bolts -->
         <div class="lightning-container">
             <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
-                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+                <polyline class="lightning-bolt-1"
+                    points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080" />
             </svg>
             <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
-                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+                <polyline class="lightning-bolt-2"
+                    points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080" />
             </svg>
             <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
-                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+                <polyline class="lightning-bolt-3"
+                    points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080" />
             </svg>
             <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
-                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+                <polyline class="lightning-bolt-4"
+                    points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080" />
             </svg>
         </div>
-        
-        <!-- Floating Particles -->
         <div class="particles">
             <div class="particle particle-1"></div>
             <div class="particle particle-2"></div>
@@ -63,13 +56,61 @@
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
-                    <li><a href="case-studies.html" class="nav-link">Results</a></li>
-                    <li><a href="industries.html" class="nav-link">Industries</a></li>
-                    <li><a href="resources.html" class="nav-link">Resources</a></li>
-                    <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
-                    <li><a href="tools.html" class="nav-link">Tools</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li class="dropdown">
+                        <a href="how-it-works.html" class="nav-link dropdown-toggle">How It Works <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="how-it-works.html#overview"><i class="fas fa-info-circle"></i> Overview</a></li>
+                            <li><a href="how-it-works.html#process"><i class="fas fa-cogs"></i> Process</a></li>
+                            <li><a href="how-it-works.html#faq"><i class="fas fa-question-circle"></i> FAQ</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="case-studies.html" class="nav-link dropdown-toggle">Results <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="case-studies.html#industry"><i class="fas fa-industry"></i> By Industry</a></li>
+                            <li><a href="case-studies.html#service"><i class="fas fa-briefcase"></i> By Service</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="services.html" class="nav-link dropdown-toggle">Services <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="house-cleaning.html"><i class="fas fa-home"></i> House Cleaning</a></li>
+                            <li><a href="pressure-washing.html"><i class="fas fa-water"></i> Pressure Washing</a></li>
+                            <li><a href="gutter-cleaning.html"><i class="fas fa-tree"></i> Gutter Cleaning</a></li>
+                            <li><a href="car-detailing.html"><i class="fas fa-car"></i> Car Detailing</a></li>
+                            <li><a href="garden-maintenance.html"><i class="fas fa-leaf"></i> Garden Maintenance</a></li>
+                            <li><a href="carpet-cleaning.html"><i class="fas fa-rug"></i> Carpet Cleaning</a></li>
+                            <li><a href="electricians.html"><i class="fas fa-plug"></i> Electricians</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="resources.html" class="nav-link dropdown-toggle">Resources <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="EMAIL_AUTO_RESPONDER_GUIDE.md"><i class="fas fa-book"></i> Guides</a></li>
+                            <li><a href="resources.html#downloads"><i class="fas fa-download"></i> Downloads</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="testimonials.html" class="nav-link dropdown-toggle">Testimonials <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="testimonials.html#video"><i class="fas fa-video"></i> Video</a></li>
+                            <li><a href="testimonials.html#written"><i class="fas fa-pen"></i> Written</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="tools.html" class="nav-link dropdown-toggle">Tools <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tools.html#calculators"><i class="fas fa-calculator"></i> Calculators</a></li>
+                            <li><a href="tools.html#templates"><i class="fas fa-file-alt"></i> Templates</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="about.html" class="nav-link dropdown-toggle">About <i class="fas fa-chevron-down" style="font-size: 0.8rem; margin-left: 5px;"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="about.html#team"><i class="fas fa-users"></i> Team</a></li>
+                            <li><a href="about.html#mission"><i class="fas fa-bullseye"></i> Mission</a></li>
+                        </ul>
+                    </li>
                     <li><a href="book-call.html" class="nav-link cta-btn">Book a Call</a></li>
                 </ul>
                 <div class="hamburger">
@@ -84,9 +125,11 @@
     <!-- Hero Section -->
     <section class="services-hero">
         <div class="container">
-            <h1>Our Services</h1>
-            <p>Lead Generation • Service Fulfilment • Local Business Growth</p>
-            <p class="hero-description">Apex Leads Analytics helps local service businesses grow through a powerful hybrid model: we generate high-quality leads, connect them with contractors, and even manage full service fulfilment using trusted subcontractors.</p>
+            <h1>Select Your Service Niche</h1>
+            <p>Tell us what you do, and we'll show you how to grow.</p>
+            <p class="hero-description">Apex Leads Analytics helps local service businesses grow through a powerful
+                hybrid model: we generate high-quality leads, connect them with contractors, and even manage full
+                service fulfilment using trusted subcontractors.</p>
         </div>
     </section>
 
@@ -104,7 +147,8 @@
                             <i class="fas fa-home"></i>
                         </div>
                         <h3>House Cleaning</h3>
-                        <p>Weekly, bi-weekly, or one-off deep cleans for homeowners who value trust, speed, and clear pricing.</p>
+                        <p>Weekly, bi-weekly, or one-off deep cleans for homeowners who value trust, speed, and clear
+                            pricing.</p>
                         <div class="service-stats">
                             <span>Lead Price: £10-£30</span>
                             <span>High Demand</span>
@@ -120,7 +164,8 @@
                             <i class="fas fa-water"></i>
                         </div>
                         <h3>Driveway Pressure Washing</h3>
-                        <p>Driveways, patios, and paths cleaned to remove dirt, moss, and stains — especially in spring and summer.</p>
+                        <p>Driveways, patios, and paths cleaned to remove dirt, moss, and stains — especially in spring
+                            and summer.</p>
                         <div class="service-stats">
                             <span>Lead Price: £10-£30</span>
                             <span>High Margin</span>
@@ -136,7 +181,8 @@
                             <i class="fas fa-tree"></i>
                         </div>
                         <h3>Gutter Cleaning</h3>
-                        <p>Quick, affordable gutter cleaning to prevent leaks and water damage — especially during autumn and winter.</p>
+                        <p>Quick, affordable gutter cleaning to prevent leaks and water damage — especially during
+                            autumn and winter.</p>
                         <div class="service-stats">
                             <span>Lead Price: £10-£30</span>
                             <span>Seasonal Peak</span>
@@ -152,7 +198,8 @@
                             <i class="fas fa-car"></i>
                         </div>
                         <h3>Car Detailing (Mobile)</h3>
-                        <p>Convenient mobile detailing done at home or work — wash, wax, interior cleaning, and full valets.</p>
+                        <p>Convenient mobile detailing done at home or work — wash, wax, interior cleaning, and full
+                            valets.</p>
                         <div class="service-stats">
                             <span>Lead Price: £10-£30</span>
                             <span>Premium Pricing</span>
@@ -168,7 +215,8 @@
                             <i class="fas fa-leaf"></i>
                         </div>
                         <h3>Garden Maintenance</h3>
-                        <p>Regular or one-off garden care — lawn mowing, hedge trimming, weeding, tidy-ups, and seasonal maintenance.</p>
+                        <p>Regular or one-off garden care — lawn mowing, hedge trimming, weeding, tidy-ups, and seasonal
+                            maintenance.</p>
                         <div class="service-stats">
                             <span>Lead Price: £10-£30</span>
                             <span>Recurring Revenue</span>
@@ -200,7 +248,8 @@
                             <i class="fas fa-plug"></i>
                         </div>
                         <h3>Electricians</h3>
-                        <p>Exclusive high-intent electrical leads. Emergency calls, installations, testing, and maintenance work.</p>
+                        <p>Exclusive high-intent electrical leads. Emergency calls, installations, testing, and
+                            maintenance work.</p>
                         <div class="service-stats">
                             <span>Lead Price: £15-£35</span>
                             <span>Premium Pricing</span>
@@ -271,7 +320,8 @@
                         <i class="fas fa-ban"></i>
                     </div>
                     <h3>No Labour Required</h3>
-                    <p>We handle customer communication, lead qualification, and job coordination. You focus on delivery.</p>
+                    <p>We handle customer communication, lead qualification, and job coordination. You focus on
+                        delivery.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -279,7 +329,8 @@
                         <i class="fas fa-tools"></i>
                     </div>
                     <h3>No Equipment Needed</h3>
-                    <p>No upfront investment in tools or vehicles. Work with subcontractors who own their own equipment.</p>
+                    <p>No upfront investment in tools or vehicles. Work with subcontractors who own their own equipment.
+                    </p>
                 </div>
 
                 <div class="benefit-card">
@@ -303,7 +354,8 @@
                         <i class="fas fa-money-bill-wave"></i>
                     </div>
                     <h3>Two Revenue Streams</h3>
-                    <p>Earn from lead sales AND service margins. Build wealth from multiple income sources simultaneously.</p>
+                    <p>Earn from lead sales AND service margins. Build wealth from multiple income sources
+                        simultaneously.</p>
                 </div>
 
                 <div class="benefit-card">
@@ -311,7 +363,8 @@
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>We Handle Everything</h3>
-                    <p>Customer communication, lead management, job coordination, payment processing. You just deliver.</p>
+                    <p>Customer communication, lead management, job coordination, payment processing. You just deliver.
+                    </p>
                 </div>
             </div>
         </div>
@@ -327,73 +380,81 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="services-contact">
-        <div class="container">
-            <h2>Get Started Today</h2>
-            <p>Let's discuss which service niche is right for you and create a custom growth plan.</p>
-
-            <div class="contact-boxes">
-                <div class="contact-box">
-                    <div class="contact-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3>Call Us</h3>
-                    <p>+44 7711 776530</p>
-                    <p class="contact-desc">Available Mon-Fri, 9am-6pm</p>
-                </div>
-
-                <div class="contact-box">
-                    <div class="contact-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>Email Us</h3>
-                    <p>haidarzaman202@gmail.com</p>
-                    <p class="contact-desc">Response within 24 hours</p>
-                </div>
-
-                <div class="contact-box">
-                    <div class="contact-icon">
-                        <i class="fab fa-whatsapp"></i>
-                    </div>
-                    <h3>WhatsApp</h3>
-                    <p>+44 7711 776530</p>
-                    <p class="contact-desc">Quick replies, chat anytime</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- Custom Mega Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Column 1: Brand & Bio -->
                 <div class="footer-section">
-                    <h4>Apex Leads Analytics</h4>
-                    <p>Your Lead Generation & Local Service Growth Partner</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="how-it-works.html">How It Works</a></li>
-                        <li><a href="pricing.html">Pricing</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Follow Us</h4>
-                    <div class="social-links">
+                    <div class="logo">
+                        <i class="fas fa-rocket"></i>
+                        <span>Apex Leads</span>
+                    </div>
+                    <p style="margin-top: 1rem; opacity: 0.8; font-size: 0.9rem;">
+                        Data-driven lead generation that connects high-intent customers with local service businesses.
+                        Scale wildly without the stress.
+                    </p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
                         <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Column 2: Services -->
+                <div class="footer-section">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="house-cleaning.html">House Cleaning</a></li>
+                        <li><a href="pressure-washing.html">Pressure Washing</a></li>
+                        <li><a href="gutter-cleaning.html">Gutter Cleaning</a></li>
+                        <li><a href="garden-maintenance.html">Garden Maintenance</a></li>
+                        <li><a href="electricians.html">Electricians</a></li>
+                        <li><a href="car-detailing.html">Car Detailing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Quick Links -->
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="case-studies.html">Success Stories</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Contact & Newsletter -->
+                <div class="footer-section">
+                    <h4>Get In Touch</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-envelope"></i> haidarzaman202@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +44 7711 776530</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Halifax, West Yorkshire</li>
+                    </ul>
+                    <div class="newsletter-box" style="margin-top: 1.5rem;">
+                        <p style="font-size: 0.8rem; margin-bottom: 0.5rem; opacity: 0.8;">Get expert growth tips:</p>
+                        <form style="display: flex; gap: 0.5rem;">
+                            <input type="email" placeholder="Email"
+                                style="padding: 0.5rem; border-radius: 4px; border: none; width: 100%; font-size: 0.9rem;">
+                            <button type="submit"
+                                style="background: var(--primary); border: none; color: black; padding: 0.5rem; border-radius: 4px; cursor: pointer;"><i
+                                    class="fas fa-arrow-right"></i></button>
+                        </form>
                     </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
-                <p>&copy; 2026 Apex Leads Analytics. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2026 Apex Leads Analytics. Built by Haidar Zaman. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -408,4 +469,5 @@
         }
     </script>
 </body>
+
 </html>
