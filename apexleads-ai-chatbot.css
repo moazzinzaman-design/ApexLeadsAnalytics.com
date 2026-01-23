@@ -1,0 +1,88 @@
+/* ApexLeads AI Chatbot Styles */
+#apexleads-ai-chatbot {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 340px;
+  max-width: 90vw;
+  background: #fff;
+  border-radius: 16px 16px 8px 8px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  z-index: 9999;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+#apexleads-ai-header {
+  background: #1a73e8;
+  color: #fff;
+  padding: 14px 18px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+#apexleads-ai-messages {
+  flex: 1;
+  padding: 14px;
+  overflow-y: auto;
+  background: #f7f9fa;
+  min-height: 180px;
+  max-height: 320px;
+}
+.apexleads-ai-msg {
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.apexleads-ai-msg.user {
+  text-align: right;
+  color: #1a73e8;
+}
+.apexleads-ai-msg.bot {
+  text-align: left;
+  color: #222;
+}
+#apexleads-ai-input-row {
+  display: flex;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+}
+#apexleads-ai-input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  outline: none;
+  background: #fff;
+}
+#apexleads-ai-send {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  padding: 0 18px;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0 0 8px 0;
+  transition: background 0.2s;
+}
+#apexleads-ai-send:hover {
+  background: #155ab6;
+}
+#apexleads-ai-toggle {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 9998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
