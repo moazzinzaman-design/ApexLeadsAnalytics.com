@@ -332,8 +332,8 @@ Learn More → how-it-works.html
 ## 💼 Business Information
 
 **Company:** Apex Leads Analytics
-**Contact Number:** 07456 522 980
-**Email:** Moazzin.zaman@outlook.com
+**Contact Number:** +44 7711 776530
+**Email:** haidarzaman202@gmail.com
 **WhatsApp:** wa.me/447456522980
 **Location:** UK-based service
 **Services:** 6+ local service categories
@@ -359,8 +359,8 @@ Testing Verified:
 ## 📞 Contact Information
 
 **For Inquiries:**
-- Phone: 07456 522 980 (Mon-Fri, 9am-6pm GMT)
-- Email: Moazzin.zaman@outlook.com (24-48hr response)
+- Phone: +44 7711 776530 (Mon-Fri, 9am-6pm GMT)
+- Email: haidarzaman202@gmail.com (24-48hr response)
 - WhatsApp: Available for quick responses
 
 **Services Available:**

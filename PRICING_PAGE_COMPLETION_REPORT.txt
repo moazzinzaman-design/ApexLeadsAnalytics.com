@@ -94,8 +94,8 @@ Organized into 3 professional categories:
 - Responsive layout
 
 **7. Contact Section** ✓
-- Phone: 07456 522 980
-- Email: Moazzin.zaman@outlook.com
+- Phone: +44 7711 776530
+- Email: haidarzaman202@gmail.com
 - WhatsApp: wa.me/447456522980
 - Direct action links
 
@@ -358,9 +358,9 @@ No additional changes required. The pricing page is fully functional and integra
 ## 📞 Contact Information
 
 **Company:** Apex Leads Analytics
-**Owner:** Moazzin Zaman
-**Phone:** 07456 522 980 (Mon-Fri, 9am-6pm GMT)
-**Email:** Moazzin.zaman@outlook.com
+**Owner:** Haidar Zaman
+**Phone:** +44 7711 776530 (Mon-Fri, 9am-6pm GMT)
+**Email:** haidarzaman202@gmail.com
 **WhatsApp:** wa.me/447456522980
 
 ---

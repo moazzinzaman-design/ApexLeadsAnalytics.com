@@ -169,7 +169,7 @@ Each individual service page includes:
 ### For You (Admin):
 1. Update contact information in any of these files:
    - Phone: +44 (0) 7456 522 980
-   - Email: Moazzin.zaman@outlook.com
+   - Email: haidarzaman202@gmail.com
    - WhatsApp: +44 7456 522 980
 
 2. Customize pricing by editing the pricing section in each page
@@ -240,4 +240,4 @@ Your website is now ready to deploy! The services section provides:
 
 Created: 2024
 Brand: Apex Leads Analytics
-Owner: Moazzin Zaman
+Owner: Haidar Zaman

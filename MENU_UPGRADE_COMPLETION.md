@@ -79,7 +79,7 @@ All requested menu upgrades and new pages have been successfully implemented and
 ### 6. **About / Our Story** (`about.html`)
 - **Purpose**: Build brand trust and connection with founder story
 - **Key Content**:
-  - Founder story (Moazzin Zaman background)
+  - Founder story (Haidar Zaman background)
   - Company mission and vision
   - 6 core values (Quality, Partnership, Transparency, Innovation, Reliability, Community)
   - Company timeline/journey
@@ -165,7 +165,7 @@ All new pages include:
 - ✅ **Color-Coded Icons** (Font Awesome integration)
 - ✅ **Responsive Design** (mobile-optimized layouts)
 - ✅ **Breadcrumb Navigation** (clear page location indicators)
-- ✅ **Integrated Footer** (contact info, quick links, Moazzin's email)
+- ✅ **Integrated Footer** (contact info, quick links, Haidar's email)
 - ✅ **Call-to-Action Buttons** (consistent styling and hover effects)
 - ✅ **Glass Morphism Cards** (modern frosted glass effect on containers)
 
@@ -336,7 +336,7 @@ To maximize the impact of these new pages:
 
 For any modifications or questions:
 - **Phone**: +44 (0) 7456 522 980
-- **Email**: Moazzin.zaman@outlook.com
+- **Email**: haidarzaman202@gmail.com
 
 ---
 

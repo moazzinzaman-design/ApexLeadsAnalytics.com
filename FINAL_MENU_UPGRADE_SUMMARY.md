@@ -221,7 +221,7 @@ Apex Leads
 **Content:**
 - **Mission Statement:** Empower contractors with intelligent lead generation
 
-- **Founder Story:** How Moazzin identified the problem and created Apex Leads
+- **Founder Story:** How Haidar identified the problem and created Apex Leads
 
 - **6 Core Values:**
   - Quality Over Quantity
@@ -238,7 +238,7 @@ Apex Leads
   - 2024: 92% Satisfaction (Industry standard set)
 
 - **Team Profiles:**
-  - Moazzin Zaman (Founder & CEO)
+  - Haidar Zaman (Founder & CEO)
   - Operations Lead (Client Success Manager)
   - Strategy Specialist (Growth & Marketing)
 
@@ -463,7 +463,7 @@ All new pages are fully responsive with:
 
 For any questions or modifications:
 - **Phone**: +44 (0) 7456 522 980
-- **Email**: Moazzin.zaman@outlook.com
+- **Email**: haidarzaman202@gmail.com
 
 ---
 

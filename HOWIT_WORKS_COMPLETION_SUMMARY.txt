@@ -44,8 +44,8 @@ A complete standalone page featuring:
 - **Ready to Start** - Call-to-action section with buttons
 
 - **Contact Section** - 3 contact methods:
-  - Phone: 07456 522 980
-  - Email: Moazzin.zaman@outlook.com
+  - Phone: +44 7711 776530
+  - Email: haidarzaman202@gmail.com
   - WhatsApp: Direct messaging link
 
 - **Footer** - Navigation and links
@@ -76,8 +76,8 @@ A complete standalone page featuring:
 - **Features:**
   - Responsive grid layout (3 columns on desktop, collapses on mobile)
   - Three contact cards:
-    - Call Us: 07456 522 980 (Mon-Fri, 9am-6pm GMT)
-    - Email Us: Moazzin.zaman@outlook.com (Reply within 24 hours)
+    - Call Us: +44 7711 776530 (Mon-Fri, 9am-6pm GMT)
+    - Email Us: haidarzaman202@gmail.com (Reply within 24 hours)
     - WhatsApp: Direct messaging link
   - Hover effects with smooth animations
   - Professional styling with gradients and glassmorphism
@@ -180,12 +180,12 @@ How It Works Page
 ## Contact Information Integration
 
 ### Phone
-- Number: 07456 522 980
+- Number: +44 7711 776530
 - Hours: Mon-Fri, 9am-6pm GMT
 - Links: tel: protocol for direct dialing
 
 ### Email
-- Address: Moazzin.zaman@outlook.com
+- Address: haidarzaman202@gmail.com
 - Response time: Within 24 hours
 - Links: mailto: protocol
 

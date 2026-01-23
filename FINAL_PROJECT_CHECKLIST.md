@@ -137,14 +137,14 @@
 ✅ Contact link from How It Works page
 
 ### External Links
-✅ Phone link: tel:07456522980
-✅ Email link: mailto:Moazzin.zaman@outlook.com
+✅ Phone link: tel:+447711776530
+✅ Email link: mailto:haidarzaman202@gmail.com
 ✅ WhatsApp link: wa.me/447456522980
 ✅ All links functional and tested
 
 ### Contact Methods
-✅ Phone: 07456 522 980
-✅ Email: Moazzin.zaman@outlook.com
+✅ Phone: +44 7711 776530
+✅ Email: haidarzaman202@gmail.com
 ✅ WhatsApp: Direct messaging available
 ✅ All methods clearly labeled
 ✅ Professional presentation
@@ -257,9 +257,9 @@
 ## 📋 Content Verification
 
 ### Contact Information Accuracy
-✅ Phone: 07456 522 980
-✅ Email: Moazzin.zaman@outlook.com
-✅ WhatsApp: 07456 522 980
+✅ Phone: +44 7711 776530
+✅ Email: haidarzaman202@gmail.com
+✅ WhatsApp: +44 7711 776530
 ✅ All contact methods working
 
 ### Service Information

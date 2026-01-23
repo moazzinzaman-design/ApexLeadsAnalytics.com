@@ -45,7 +45,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         radial-gradient(2px 2px at 20px 30px, #eee, rgba(0, 0, 0, 0)),
         radial-gradient(2px 2px at 60px 70px, #fff, rgba(0, 0, 0, 0)),
         radial-gradient(1px 1px at 50px 50px, #fff, rgba(0, 0, 0, 0)),
@@ -58,13 +58,25 @@ body {
 }
 
 @keyframes stars-twinkle {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.9; }
+
+    0%,
+    100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 0.9;
+    }
 }
 
 @keyframes stars-drift {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(-200px, -200px); }
+    0% {
+        transform: translate(0, 0);
+    }
+
+    100% {
+        transform: translate(-200px, -200px);
+    }
 }
 
 /* Cloud Layer */
@@ -72,7 +84,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><defs><filter id="blur"><feGaussianBlur in="SourceGraphic" stdDeviation="3"/></filter></defs><path d="M50 150 Q80 100 120 150 T200 150 Q230 100 270 150 T350 150" stroke="rgba(0,212,255,0.15)" stroke-width="40" fill="none" filter="url(%23blur)"/><path d="M400 180 Q430 130 470 180 T550 180 Q580 130 620 180 T700 180" stroke="rgba(124,58,237,0.12)" stroke-width="35" fill="none" filter="url(%23blur)"/><path d="M750 160 Q780 110 820 160 T900 160 Q930 110 970 160 T1050 160" stroke="rgba(255,0,110,0.1)" stroke-width="38" fill="none" filter="url(%23blur)"/></svg>'),
         url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300"><defs><filter id="blur"><feGaussianBlur in="SourceGraphic" stdDeviation="3"/></filter></defs><path d="M100 80 Q130 30 170 80 T250 80 Q280 30 320 80 T400 80" stroke="rgba(0,212,255,0.1)" stroke-width="45" fill="none" filter="url(%23blur)"/><path d="M500 100 Q530 50 570 100 T650 100 Q680 50 720 100 T800 100" stroke="rgba(124,58,237,0.08)" stroke-width="40" fill="none" filter="url(%23blur)"/></svg>');
     background-repeat: repeat-x;
@@ -83,13 +95,23 @@ body {
 }
 
 @keyframes clouds-drift {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(1200px); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(1200px);
+    }
 }
 
 @keyframes clouds-drift-2 {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(1200px); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(1200px);
+    }
 }
 
 /* Grid/Tech Pattern */
@@ -97,7 +119,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(rgba(0, 212, 255, 0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 212, 255, 0.03) 1px, transparent 1px);
     background-size: 100px 100px;
@@ -106,8 +128,15 @@ body {
 }
 
 @keyframes grid-pulse {
-    0%, 100% { opacity: 0.2; }
-    50% { opacity: 0.5; }
+
+    0%,
+    100% {
+        opacity: 0.2;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
 }
 
 .lightning-container {
@@ -125,71 +154,211 @@ svg.lightning {
 
 /* Enhanced Lightning Bolt Animations - More Prominent */
 @keyframes lightning-strike-1 {
-    0% { opacity: 0; }
-    4% { opacity: 0.9; }
-    5% { opacity: 0.5; }
-    6% { opacity: 1; }
-    7% { opacity: 0.2; }
-    8% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    4% {
+        opacity: 0.9;
+    }
+
+    5% {
+        opacity: 0.5;
+    }
+
+    6% {
+        opacity: 1;
+    }
+
+    7% {
+        opacity: 0.2;
+    }
+
+    8% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes lightning-strike-2 {
-    0% { opacity: 0; }
-    11% { opacity: 1; }
-    12% { opacity: 0.4; }
-    13% { opacity: 0.95; }
-    14% { opacity: 0.1; }
-    15% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    11% {
+        opacity: 1;
+    }
+
+    12% {
+        opacity: 0.4;
+    }
+
+    13% {
+        opacity: 0.95;
+    }
+
+    14% {
+        opacity: 0.1;
+    }
+
+    15% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes lightning-strike-3 {
-    0% { opacity: 0; }
-    34% { opacity: 0.85; }
-    35% { opacity: 0.3; }
-    36% { opacity: 0.9; }
-    37% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    34% {
+        opacity: 0.85;
+    }
+
+    35% {
+        opacity: 0.3;
+    }
+
+    36% {
+        opacity: 0.9;
+    }
+
+    37% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 @keyframes lightning-strike-4 {
-    0% { opacity: 0; }
-    25% { opacity: 0.8; }
-    26% { opacity: 0; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0.8;
+    }
+
+    26% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }
 
 /* Enhanced Glow Effects - Brighter and More Striking */
 @keyframes lightning-glow-1 {
-    0% { filter: drop-shadow(0 0 0px #00d4ff); opacity: 0; }
-    4% { filter: drop-shadow(0 0 40px #00d4ff) drop-shadow(0 0 80px #00d4ff) drop-shadow(0 0 120px #7c3aed); opacity: 1; }
-    6% { filter: drop-shadow(0 0 20px #00d4ff) drop-shadow(0 0 40px #7c3aed); opacity: 0.6; }
-    8% { filter: drop-shadow(0 0 5px #00d4ff); opacity: 0; }
-    100% { filter: drop-shadow(0 0 0px #00d4ff); opacity: 0; }
+    0% {
+        filter: drop-shadow(0 0 0px #00d4ff);
+        opacity: 0;
+    }
+
+    4% {
+        filter: drop-shadow(0 0 40px #00d4ff) drop-shadow(0 0 80px #00d4ff) drop-shadow(0 0 120px #7c3aed);
+        opacity: 1;
+    }
+
+    6% {
+        filter: drop-shadow(0 0 20px #00d4ff) drop-shadow(0 0 40px #7c3aed);
+        opacity: 0.6;
+    }
+
+    8% {
+        filter: drop-shadow(0 0 5px #00d4ff);
+        opacity: 0;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0px #00d4ff);
+        opacity: 0;
+    }
 }
 
 @keyframes lightning-glow-2 {
-    0% { filter: drop-shadow(0 0 0px #7c3aed); opacity: 0; }
-    11% { filter: drop-shadow(0 0 50px #7c3aed) drop-shadow(0 0 100px #7c3aed) drop-shadow(0 0 150px #00d4ff); opacity: 1; }
-    13% { filter: drop-shadow(0 0 25px #7c3aed) drop-shadow(0 0 50px #00d4ff); opacity: 0.5; }
-    15% { filter: drop-shadow(0 0 5px #7c3aed); opacity: 0; }
-    100% { filter: drop-shadow(0 0 0px #7c3aed); opacity: 0; }
+    0% {
+        filter: drop-shadow(0 0 0px #7c3aed);
+        opacity: 0;
+    }
+
+    11% {
+        filter: drop-shadow(0 0 50px #7c3aed) drop-shadow(0 0 100px #7c3aed) drop-shadow(0 0 150px #00d4ff);
+        opacity: 1;
+    }
+
+    13% {
+        filter: drop-shadow(0 0 25px #7c3aed) drop-shadow(0 0 50px #00d4ff);
+        opacity: 0.5;
+    }
+
+    15% {
+        filter: drop-shadow(0 0 5px #7c3aed);
+        opacity: 0;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0px #7c3aed);
+        opacity: 0;
+    }
 }
 
 @keyframes lightning-glow-3 {
-    0% { filter: drop-shadow(0 0 0px #ff006e); opacity: 0; }
-    34% { filter: drop-shadow(0 0 35px #ff006e) drop-shadow(0 0 70px #ff006e) drop-shadow(0 0 110px #00d4ff); opacity: 1; }
-    36% { filter: drop-shadow(0 0 20px #ff006e) drop-shadow(0 0 40px #00d4ff); opacity: 0.5; }
-    37% { filter: drop-shadow(0 0 5px #ff006e); opacity: 0; }
-    100% { filter: drop-shadow(0 0 0px #ff006e); opacity: 0; }
+    0% {
+        filter: drop-shadow(0 0 0px #ff006e);
+        opacity: 0;
+    }
+
+    34% {
+        filter: drop-shadow(0 0 35px #ff006e) drop-shadow(0 0 70px #ff006e) drop-shadow(0 0 110px #00d4ff);
+        opacity: 1;
+    }
+
+    36% {
+        filter: drop-shadow(0 0 20px #ff006e) drop-shadow(0 0 40px #00d4ff);
+        opacity: 0.5;
+    }
+
+    37% {
+        filter: drop-shadow(0 0 5px #ff006e);
+        opacity: 0;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0px #ff006e);
+        opacity: 0;
+    }
 }
 
 @keyframes lightning-glow-4 {
-    0% { filter: drop-shadow(0 0 0px #00ff88); opacity: 0; }
-    25% { filter: drop-shadow(0 0 45px #00ff88) drop-shadow(0 0 90px #00ff88) drop-shadow(0 0 140px #00d4ff); opacity: 1; }
-    26% { filter: drop-shadow(0 0 20px #00ff88); opacity: 0; }
-    100% { filter: drop-shadow(0 0 0px #00ff88); opacity: 0; }
+    0% {
+        filter: drop-shadow(0 0 0px #00ff88);
+        opacity: 0;
+    }
+
+    25% {
+        filter: drop-shadow(0 0 45px #00ff88) drop-shadow(0 0 90px #00ff88) drop-shadow(0 0 140px #00d4ff);
+        opacity: 1;
+    }
+
+    26% {
+        filter: drop-shadow(0 0 20px #00ff88);
+        opacity: 0;
+    }
+
+    100% {
+        filter: drop-shadow(0 0 0px #00ff88);
+        opacity: 0;
+    }
 }
 
 /* Enhanced Lightning SVG Stroke Animations */
@@ -234,7 +403,7 @@ svg.lightning {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(circle at 15% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 40%),
         radial-gradient(circle at 85% 70%, rgba(124, 58, 237, 0.12) 0%, transparent 40%),
         radial-gradient(circle at 50% 50%, rgba(255, 0, 110, 0.08) 0%, transparent 50%),
@@ -244,16 +413,19 @@ svg.lightning {
 }
 
 @keyframes electrical-pulse {
-    0%, 100% { 
-        background: 
+
+    0%,
+    100% {
+        background:
             radial-gradient(circle at 15% 30%, rgba(0, 212, 255, 0.15) 0%, transparent 40%),
             radial-gradient(circle at 85% 70%, rgba(124, 58, 237, 0.12) 0%, transparent 40%),
             radial-gradient(circle at 50% 50%, rgba(255, 0, 110, 0.08) 0%, transparent 50%),
             radial-gradient(circle at 25% 75%, rgba(0, 255, 136, 0.1) 0%, transparent 45%);
         opacity: 0.6;
     }
-    50% { 
-        background: 
+
+    50% {
+        background:
             radial-gradient(circle at 15% 30%, rgba(0, 212, 255, 0.3) 0%, transparent 40%),
             radial-gradient(circle at 85% 70%, rgba(124, 58, 237, 0.25) 0%, transparent 40%),
             radial-gradient(circle at 50% 50%, rgba(255, 0, 110, 0.2) 0%, transparent 50%),
@@ -326,12 +498,15 @@ svg.lightning {
         transform: translateY(0) translateX(0);
         opacity: 0;
     }
+
     10% {
         opacity: 1;
     }
+
     90% {
         opacity: 1;
     }
+
     100% {
         transform: translateY(-100vh) translateX(100px);
         opacity: 0;
@@ -343,7 +518,7 @@ svg.lightning {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: 
+    background:
         radial-gradient(ellipse 1200px 900px at 10% 20%, rgba(0, 212, 255, 0.05) 0%, transparent 60%),
         radial-gradient(ellipse 1200px 900px at 90% 80%, rgba(124, 58, 237, 0.04) 0%, transparent 60%);
     animation: ambient-drift 25s ease-in-out infinite;
@@ -351,8 +526,15 @@ svg.lightning {
 }
 
 @keyframes ambient-drift {
-    0%, 100% { transform: translate(0, 0); }
-    50% { transform: translate(50px, 50px); }
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(50px, 50px);
+    }
 }
 
 .container {
@@ -387,6 +569,7 @@ svg.lightning {
     gap: 0.5rem;
     background: var(--gradient-1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -434,6 +617,8 @@ svg.lightning {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    z-index: 1001;
+    /* Ensure above menu */
 }
 
 .hamburger span {
@@ -442,6 +627,20 @@ svg.lightning {
     background: var(--primary);
     margin: 5px 0;
     transition: 0.3s;
+    border-radius: 3px;
+}
+
+/* Hamburger Animation */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
 }
 
 /* Hero Section */
@@ -453,6 +652,8 @@ svg.lightning {
     min-height: calc(100vh - 60px);
     display: flex;
     align-items: center;
+    justify-content: center;
+    width: 100%;
 }
 
 .hero-background {
@@ -474,14 +675,23 @@ svg.lightning {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 .hero-content {
     position: relative;
     z-index: 10;
     text-align: center;
+    width: 100%;
+    max-width: 100%;
 }
 
 .hero-logo-wrapper {
@@ -553,18 +763,43 @@ svg.lightning {
 }
 
 @keyframes logoFloat {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
 }
 
 @keyframes logoPulse {
-    0%, 100% { transform: scale(1); filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.4)); }
-    50% { transform: scale(1.05); filter: drop-shadow(0 0 50px rgba(124, 58, 237, 0.6)); }
+
+    0%,
+    100% {
+        transform: scale(1);
+        filter: drop-shadow(0 0 30px rgba(0, 212, 255, 0.4));
+    }
+
+    50% {
+        transform: scale(1.05);
+        filter: drop-shadow(0 0 50px rgba(124, 58, 237, 0.6));
+    }
 }
 
 @keyframes glowPulse {
-    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
-    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.6; }
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.6;
+    }
 }
 
 @keyframes floatInDown {
@@ -572,6 +807,7 @@ svg.lightning {
         opacity: 0;
         transform: translateY(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -583,9 +819,11 @@ svg.lightning {
         opacity: 1;
         transform: translate(0, 0);
     }
+
     50% {
         opacity: 0.5;
     }
+
     100% {
         opacity: 0;
         transform: translate(50px, -50px);
@@ -598,6 +836,7 @@ svg.lightning {
     margin-bottom: 0.5rem;
     background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #ff006e 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1.2;
     text-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
@@ -606,8 +845,15 @@ svg.lightning {
 }
 
 @keyframes titleGlow {
-    0%, 100% { filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3)); }
-    50% { filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.5)); }
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 20px rgba(124, 58, 237, 0.5));
+    }
 }
 
 .hero-subtitle {
@@ -634,6 +880,7 @@ svg.lightning {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -728,6 +975,7 @@ svg.lightning {
     font-size: 2.5rem;
     background: var(--gradient-1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
 }
@@ -751,6 +999,7 @@ svg.lightning {
     margin-bottom: 1rem;
     background: var(--gradient-2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -808,7 +1057,7 @@ svg.lightning {
     font-weight: 800;
     color: transparent;
     -webkit-background-clip: text;
-    background: var(--gradient-1);
+    background-clip: text;
     margin-bottom: 1rem;
 }
 
@@ -937,6 +1186,7 @@ svg.lightning {
     font-weight: 800;
     background: var(--gradient-1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1317,6 +1567,7 @@ svg.lightning {
     margin-bottom: 0.5rem;
     background: var(--gradient-2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -1390,6 +1641,7 @@ svg.lightning {
     font-weight: 900;
     background: var(--gradient-2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     text-align: center;
     margin-bottom: 0.5rem;
@@ -1548,8 +1800,8 @@ svg.lightning {
     }
 
     .service-button-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 0.8rem;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
     }
 
     .service-btn {
@@ -1571,5 +1823,23 @@ svg.lightning {
 
     .cta-section h2 {
         font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .hero-title {
+        font-size: 1.5rem;
+    }
+
+    .service-btn {
+        padding: 0.8rem 0.4rem;
+    }
+
+    .service-btn i {
+        font-size: 1.2rem;
+    }
+
+    .service-btn span {
+        font-size: 0.65rem;
     }
 }

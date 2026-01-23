@@ -139,7 +139,7 @@ All pages are fully responsive on:
 ## 🔐 Contact Information
 
 - **Phone**: +44 (0) 7456 522 980
-- **Email**: Moazzin.zaman@outlook.com
+- **Email**: haidarzaman202@gmail.com
 
 ## 📋 Implementation Checklist
 
@@ -163,6 +163,6 @@ Start promoting your new pages today!
 
 ---
 
-**Questions?** Contact Moazzin Zaman
-📧 Moazzin.zaman@outlook.com
+**Questions?** Contact Haidar Zaman
+📧 haidarzaman202@gmail.com
 📞 +44 (0) 7456 522 980

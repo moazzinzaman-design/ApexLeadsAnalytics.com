@@ -118,7 +118,7 @@
 │              CONTACT SECTION                            │
 │                                                         │
 │  📞 Call Us              📧 Email Us                    │
-│  07456 522 980          Moazzin.zaman@outlook.com      │
+│  +44 7711 776530          haidarzaman202@gmail.com      │
 │  Mon-Fri, 9am-6pm       Reply within 24 hours         │
 │                                                         │
 │                💬 WhatsApp                              │
@@ -145,8 +145,8 @@ AFTER:  How It Works → how-it-works.html (separate page)
 **Location:** Between Pricing Section and Revenue Model Section
 
 Three contact cards in responsive grid:
-- Call Us (07456 522 980)
-- Email Us (Moazzin.zaman@outlook.com)
+- Call Us (+44 7711 776530)
+- Email Us (haidarzaman202@gmail.com)
 - WhatsApp (Direct link)
 
 Each card features:

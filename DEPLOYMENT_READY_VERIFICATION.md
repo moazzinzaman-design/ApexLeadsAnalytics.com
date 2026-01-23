@@ -170,5 +170,5 @@
 ---
 
 **Contact for any questions:**
-📧 Moazzin.zaman@outlook.com
+📧 haidarzaman202@gmail.com
 📞 +44 (0) 7456 522 980

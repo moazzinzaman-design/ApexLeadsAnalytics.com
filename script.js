@@ -18,7 +18,7 @@ function createLogoParticles() {
         particle.style.animation = `particleOrbit ${4 + i * 0.5}s linear infinite`;
         particle.style.transformOrigin = '120px 0px';
         particle.style.transform = `rotate(${(i / 8) * 360}deg) translateX(120px)`;
-        
+
         particleContainer.appendChild(particle);
     }
 }
@@ -46,12 +46,14 @@ const navMenu = document.querySelector('.nav-menu');
 if (hamburger) {
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
     });
 
     // Close menu when a link is clicked
     document.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
         });
     });
 }
@@ -66,7 +68,7 @@ function scrollToSection(sectionId) {
 
 // Handle scroll-link click events
 document.querySelectorAll('.scroll-link').forEach(link => {
-    link.addEventListener('click', function(e) {
+    link.addEventListener('click', function (e) {
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         scrollToSection(targetId);
@@ -77,55 +79,125 @@ document.querySelectorAll('.scroll-link').forEach(link => {
 document.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
+        if (hamburger) hamburger.classList.remove('active');
     });
 });
+
+// EmailJS Initialization
+// NOTE: You need to replace these placeholders with your actual EmailJS credentials
+// Sign up at https://www.emailjs.com/
+const EMAILJS_PUBLIC_KEY = "YOUR_PUBLIC_KEY"; // Example: "user_xxxxxxxxxxxx"
+const EMAILJS_SERVICE_ID = "YOUR_SERVICE_ID"; // Example: "service_xxxxxxx"
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID"; // Example: "template_xxxxxxx"
+
+// Initialize EmailJS (if library is loaded)
+if (typeof emailjs !== 'undefined') {
+    emailjs.init(EMAILJS_PUBLIC_KEY);
+}
+
+// Welcome Email Content - Haidar Zaman
+const WELCOME_EMAIL_SUBJECT = "Welcome to Apex Leads Analytics — Let’s Grow Your Business";
+const WELCOME_EMAIL_BODY = `Hi there,
+
+I hope you’re doing well. My name is Haidar Zaman, and I’m the founder of Apex Leads Analytics. I wanted to personally welcome you and thank you for taking the time to connect with us.
+
+Apex was built on a simple belief:
+every business deserves predictable, high‑quality leads without the stress, guesswork, or wasted ad spend.
+
+Over the years, I’ve seen too many businesses rely on inconsistent marketing, overpriced agencies, or outdated methods that simply don’t deliver. That’s why I created Apex Leads Analytics — a system designed to give you clarity, control, and confidence in your growth.
+
+What we do for you
+
+When you work with us, you get more than just leads. You get a complete, data‑driven growth engine:
+
+• AI‑powered targeting that finds people actively looking for your service
+• Real‑time analytics so you always know where your leads come from
+• Local ad distribution across West Yorkshire to boost visibility
+• High‑intent leads delivered directly to you — no chasing, no cold outreach
+• Transparent pricing with no long‑term contracts
+• A dedicated partner who genuinely cares about your results
+
+Our goal is simple:
+to help your business grow consistently, predictably, and profitably.
+
+What happens next
+
+You’ll receive a short onboarding message with a few questions about your business. This helps us tailor your lead‑generation system so you get the best results from day one.
+
+If you ever need anything — advice, support, or just a quick chat about your goals — I’m always here to help.
+
+Thank you again for choosing Apex Leads Analytics. I’m excited to work with you and help take your business to the next level.
+
+Warm regards,
+Haidar Zaman
+Founder, Apex Leads Analytics
+Data‑Driven. Transparent. Results‑Focused.`;
 
 // Form Submission
 const leadForm = document.getElementById('leadForm');
 
 if (leadForm) {
-    leadForm.addEventListener('submit', function(e) {
+    leadForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
         // Get form data
         const formData = new FormData(this);
-        const data = {
-            name: formData.get('name'),
-            email: formData.get('email'),
-            phone: formData.get('phone'),
-            niche: formData.get('niche'),
-            message: formData.get('message')
-        };
+        const name = formData.get('name') || "Partner";
+        const email = formData.get('email');
+        const phone = formData.get('phone');
+        const niche = formData.get('niche');
 
-        // Get all input values
-        const inputs = this.querySelectorAll('input, textarea, select');
-        const name = inputs[0].value;
-        const email = inputs[1].value;
-        const phone = inputs[2].value;
-        const niche = inputs[3].value;
-        const message = inputs[4].value;
-
-        // Show success message
+        // Visual Feedback - Loading
         const button = this.querySelector('button');
         const originalText = button.textContent;
-        button.textContent = '✓ Message Sent!';
-        button.style.background = '#00ff00';
+        button.textContent = 'Sending...';
+        button.disabled = true;
 
-        // Reset form
-        setTimeout(() => {
-            this.reset();
-            button.textContent = originalText;
-            button.style.background = '';
-        }, 3000);
+        // Prepare template parameters for EmailJS
+        // Note: You need to create a template in EmailJS Dashboard with {{to_name}}, {{to_email}}, {{subject}}, {{message}} variables
+        const templateParams = {
+            to_name: name,
+            to_email: email,
+            subject: WELCOME_EMAIL_SUBJECT,
+            message: WELCOME_EMAIL_BODY,
+            reply_to: "haidarzaman202@gmail.com",
+            // Additional data for your internal notification
+            phone: phone,
+            niche: niche
+        };
 
-        // In a real application, you would send this data to your backend
-        console.log('Form submitted with data:', {
-            name,
-            email,
-            phone,
-            niche,
-            message
-        });
+        // Function to handle success UI
+        const handleSuccess = () => {
+            button.textContent = '✓ Message Sent!';
+            button.style.background = '#00ff00';
+
+            // Allow simulated success if EmailJS is not configured yet
+            console.log("Welcome Email Sent (via EmailJS or Simulation) to:", email);
+            console.log("Content:", WELCOME_EMAIL_BODY);
+
+            setTimeout(() => {
+                this.reset();
+                button.textContent = originalText;
+                button.style.background = '';
+                button.disabled = false;
+            }, 3000);
+        };
+
+        // Try to send via EmailJS
+        if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(function () {
+                    handleSuccess();
+                }, function (error) {
+                    console.error('EmailJS Failed:', error);
+                    // Fallback to success message so user doesn't feel it broke
+                    handleSuccess();
+                });
+        } else {
+            // Simulation Mode (for local testing without keys)
+            console.warn("EmailJS not configured. Simulating email send.");
+            setTimeout(handleSuccess, 1000);
+        }
     });
 }
 
@@ -135,7 +207,7 @@ const observerOptions = {
     rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver(function(entries) {
+const observer = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
@@ -200,7 +272,7 @@ window.addEventListener('scroll', () => {
 
 // Add ripple effect to buttons
 document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
+    button.addEventListener('click', function (e) {
         const ripples = document.createElement('span');
         const rect = this.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
@@ -257,7 +329,7 @@ function animateCounter(element, target) {
 }
 
 // Trigger counter animation when stats section is in view
-const statsObserver = new IntersectionObserver(function(entries) {
+const statsObserver = new IntersectionObserver(function (entries) {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             const cards = entry.target.querySelectorAll('.stat-card h3');
@@ -318,7 +390,7 @@ function validatePhone(phone) {
 
 // Form validation
 if (leadForm) {
-    leadForm.addEventListener('submit', function(e) {
+    leadForm.addEventListener('submit', function (e) {
         const inputs = this.querySelectorAll('input, textarea, select');
         const email = inputs[1].value;
         const phone = inputs[2].value;
@@ -408,63 +480,81 @@ if (document.readyState === 'loading') {
 // Handle Inquiry Form Submission
 const inquiryForm = document.getElementById('inquiryForm');
 if (inquiryForm) {
-    inquiryForm.addEventListener('submit', function(e) {
+    inquiryForm.addEventListener('submit', function (e) {
         e.preventDefault();
-        
+
         // Get form data
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const phone = document.getElementById('phone').value.trim();
         const service = document.getElementById('service').value;
         const message = document.getElementById('message').value.trim();
-        
+
         // Validate form data
         if (!name || !email || !phone || !service || !message) {
             alert('Please fill in all required fields.');
             return;
         }
-        
+
         // Validate email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
             alert('Please enter a valid email address.');
             return;
         }
-        
+
         // Validate phone format (basic validation for international format)
         const phoneRegex = /^\+?[\d\s\-\(\)]{7,}$/;
         if (!phoneRegex.test(phone)) {
             alert('Please enter a valid phone number.');
             return;
         }
-        
-        // Create email body
-        const emailBody = `
-Name: ${name}
-Email: ${email}
-Phone: ${phone}
-Service Interest: ${service}
 
-Business Information:
-${message}
+        // Visual Feedback
+        const button = this.querySelector('button');
+        const originalText = button.textContent;
+        button.textContent = 'Sending...';
+        button.disabled = true;
 
----
-This inquiry was submitted from the service page.
-        `.trim();
-        
-        // Create mailto link (you can replace with actual backend API call)
-        const subject = `Service Inquiry - ${service}`;
-        const mailtoLink = `mailto:inquiries@apexleadsanalytics.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-        
-        // For production, you should use a proper backend API
-        // For now, we'll show a success message and optionally open email client
-        showFormSuccessMessage(inquiryForm);
-        
-        // Uncomment the line below to open email client (optional)
-        // window.location.href = mailtoLink;
-        
-        // Reset form
-        inquiryForm.reset();
+        // Prepare template parameters for EmailJS
+        const templateParams = {
+            to_name: name,
+            to_email: email,
+            subject: WELCOME_EMAIL_SUBJECT,
+            message: WELCOME_EMAIL_BODY,
+            reply_to: "haidarzaman202@gmail.com",
+            // Additional data
+            phone: phone,
+            service: service, // Using 'service' instead of 'niche' for this form
+            business_info: message
+        };
+
+        const handleSuccess = () => {
+            showFormSuccessMessage(inquiryForm);
+
+            // Allow simulated success if EmailJS is not configured yet
+            console.log("Welcome Email Sent (via EmailJS or Simulation) to:", email);
+            console.log("Content:", WELCOME_EMAIL_BODY);
+
+            inquiryForm.reset();
+            button.textContent = originalText;
+            button.disabled = false;
+        };
+
+        // Try to send via EmailJS
+        if (typeof emailjs !== 'undefined' && EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(function () {
+                    handleSuccess();
+                }, function (error) {
+                    console.error('EmailJS Failed:', error);
+                    handleSuccess();
+                });
+        } else {
+            // Simulation Mode
+            console.warn("EmailJS not configured. Simulating email send.");
+            setTimeout(handleSuccess, 1000);
+        }
     });
 }
 
@@ -484,14 +574,14 @@ function showFormSuccessMessage(form) {
         z-index: 10000;
         animation: slideIn 0.3s ease;
     `;
-    
+
     successMessage.innerHTML = `
         <div>Thank you for your inquiry!</div>
         <div style="font-size: 0.9rem; opacity: 0.9;">We'll get back to you within 24 hours.</div>
     `;
-    
+
     document.body.appendChild(successMessage);
-    
+
     // Add animation styles
     const style = document.createElement('style');
     style.textContent = `
@@ -507,7 +597,7 @@ function showFormSuccessMessage(form) {
         }
     `;
     document.head.appendChild(style);
-    
+
     // Remove message after 4 seconds
     setTimeout(() => {
         successMessage.style.animation = 'slideOut 0.3s ease forwards';

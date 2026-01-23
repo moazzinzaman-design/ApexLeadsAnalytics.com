@@ -14,11 +14,12 @@
     font-weight: 800;
     background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #ff006e 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.5rem;
 }
 
-.services-hero > div > p:first-of-type {
+.services-hero>div>p:first-of-type {
     font-size: 1.3rem;
     color: var(--primary);
     margin-bottom: 1.5rem;
@@ -45,6 +46,7 @@
     margin-bottom: 0.5rem;
     background: var(--gradient-2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -164,6 +166,7 @@
     margin-bottom: 0.5rem;
     background: var(--gradient-2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -215,6 +218,7 @@
     font-weight: 800;
     background: var(--gradient-1);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 0.3rem;
 }
@@ -255,6 +259,7 @@
     margin-bottom: 0.5rem;
     background: var(--gradient-2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -331,10 +336,11 @@
     margin-bottom: 0.5rem;
     background: var(--gradient-2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.services-contact > div > p:nth-of-type(1) {
+.services-contact>div>p:nth-of-type(1) {
     text-align: center;
     color: var(--text-secondary);
     font-size: 1.1rem;
@@ -401,6 +407,7 @@
     font-weight: 800;
     background: var(--gradient-2);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
 }
@@ -413,11 +420,12 @@
 }
 
 .breadcrumb {
-    display: flex;
     gap: 0.5rem;
     justify-content: center;
     margin-bottom: 2rem;
     font-size: 0.95rem;
+    flex-wrap: wrap;
+    /* Allow wrapping on small screens */
 }
 
 .breadcrumb a {
@@ -503,6 +511,17 @@
 .pricing-table {
     width: 100%;
     margin: 2rem 0;
+    border-collapse: collapse;
+    /* Ensure borders render cleanly */
+    min-width: 500px;
+    /* Force minimum width to trigger scroll if needed */
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 1.5rem;
 }
 
 .pricing-table th,
@@ -597,6 +616,18 @@
     .service-page-hero h1 {
         font-size: 2rem;
     }
+
+    /* Ensure hero padding is tighter on mobile */
+    .service-page-hero {
+        padding: 60px 20px;
+    }
+
+    /* Wrap tables to prevent breaking layout */
+    .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
 }
 
 /* Inquiry Form Section */
@@ -613,10 +644,11 @@
     margin-bottom: 1rem;
     background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.inquiry-form-section > .container > p {
+.inquiry-form-section>.container>p {
     text-align: center;
     color: var(--text-secondary);
     font-size: 1.1rem;
@@ -719,7 +751,7 @@
     .form-row {
         grid-template-columns: 1fr;
     }
-    
+
     .inquiry-form {
         padding: 2rem;
     }
