@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,7 @@
             gap: 2rem;
             margin: 3rem 0;
         }
+
         .testimonial-card {
             background: rgba(21, 29, 59, 0.6);
             border: 1px solid rgba(0, 212, 255, 0.2);
@@ -22,16 +24,19 @@
             backdrop-filter: blur(10px);
             transition: all 0.3s ease;
         }
+
         .testimonial-card:hover {
             border-color: rgba(0, 212, 255, 0.5);
             transform: translateY(-10px);
         }
+
         .testimonial-header {
             display: flex;
             align-items: center;
             margin-bottom: 1.5rem;
             gap: 1rem;
         }
+
         .testimonial-avatar {
             width: 60px;
             height: 60px;
@@ -43,20 +48,24 @@
             font-size: 1.5rem;
             flex-shrink: 0;
         }
+
         .testimonial-info h4 {
             margin: 0;
             color: var(--text-primary);
         }
+
         .testimonial-info p {
             margin: 0.25rem 0 0 0;
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
+
         .stars {
             color: #FFD700;
             font-size: 0.9rem;
             margin-bottom: 1rem;
         }
+
         .testimonial-text {
             color: var(--text-secondary);
             line-height: 1.6;
@@ -64,6 +73,7 @@
             font-style: italic;
             margin-bottom: 1rem;
         }
+
         .testimonial-metrics {
             background: rgba(0, 212, 255, 0.1);
             border-left: 3px solid var(--primary);
@@ -71,6 +81,7 @@
             border-radius: 5px;
             font-size: 0.85rem;
         }
+
         .video-testimonial {
             background: rgba(21, 29, 59, 0.8);
             border: 1px solid rgba(0, 212, 255, 0.2);
@@ -79,16 +90,19 @@
             margin: 2rem 0;
             transition: all 0.3s ease;
         }
+
         .video-testimonial:hover {
             border-color: rgba(0, 212, 255, 0.5);
             transform: translateY(-5px);
         }
+
         .video-container {
             position: relative;
             width: 100%;
             padding-bottom: 56.25%;
             background: black;
         }
+
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -98,17 +112,21 @@
             border: none;
             border-radius: 15px;
         }
+
         .video-info {
             padding: 1.5rem;
         }
+
         .video-info h4 {
             margin: 0 0 0.5rem 0;
         }
+
         .video-info p {
             margin: 0;
             color: var(--text-secondary);
             font-size: 0.9rem;
         }
+
         .rating-badge {
             display: inline-block;
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
@@ -119,6 +137,7 @@
             font-size: 0.85rem;
             margin-bottom: 1.5rem;
         }
+
         .stats-box {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -129,15 +148,18 @@
             border-radius: 15px;
             border: 1px solid rgba(0, 212, 255, 0.2);
         }
+
         .stat {
             text-align: center;
         }
+
         .stat-number {
             font-size: 2rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 0.5rem;
         }
+
         .stat-label {
             color: var(--text-secondary);
             font-size: 0.85rem;
@@ -145,6 +167,7 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+
 <body>
     <!-- Enhanced Futuristic Background -->
     <div class="lightning-bg">
@@ -155,16 +178,20 @@
         <div class="electrical-field"></div>
         <div class="lightning-container">
             <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
-                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+                <polyline class="lightning-bolt-1"
+                    points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080" />
             </svg>
             <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
-                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+                <polyline class="lightning-bolt-2"
+                    points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080" />
             </svg>
             <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
-                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+                <polyline class="lightning-bolt-3"
+                    points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080" />
             </svg>
             <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
-                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+                <polyline class="lightning-bolt-4"
+                    points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080" />
             </svg>
         </div>
         <div class="particles">
@@ -256,7 +283,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"Apex Leads completely transformed my business. Within 3 months, my monthly revenue went from £2,500 to £7,200. The leads are high-quality and the support team is always there to help. Best investment I've made!"</p>
+                <p class="testimonial-text">"Apex Leads completely transformed my business. Within 3 months, my monthly
+                    revenue went from £2,500 to £7,200. The leads are high-quality and the support team is always there
+                    to help. Best investment I've made!"</p>
                 <div class="testimonial-metrics">
                     <i class="fas fa-arrow-up" style="color: #00ff88;"></i>
                     <strong>188% Revenue Growth</strong> in 6 months
@@ -281,7 +310,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"I was skeptical at first, but the numbers don't lie. Apex Leads delivered 150+ leads in my first month. My conversion rate is 30%, and I'm now booked 3 months solid. This is the real deal!"</p>
+                <p class="testimonial-text">"I was skeptical at first, but the numbers don't lie. Apex Leads delivered
+                    150+ leads in my first month. My conversion rate is 30%, and I'm now booked 3 months solid. This is
+                    the real deal!"</p>
                 <div class="testimonial-metrics">
                     <i class="fas fa-arrow-up" style="color: #00ff88;"></i>
                     <strong>280% Growth</strong> - From £2.5k to £9.5k/month
@@ -306,7 +337,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                <p class="testimonial-text">"The leads quality from Apex Leads is incredible. I'm able to be selective about which jobs I take. Within 6 months, I hired a second technician just to keep up with demand. Highly recommend!"</p>
+                <p class="testimonial-text">"The leads quality from Apex Leads is incredible. I'm able to be selective
+                    about which jobs I take. Within 6 months, I hired a second technician just to keep up with demand.
+                    Highly recommend!"</p>
                 <div class="testimonial-metrics">
                     <i class="fas fa-arrow-up" style="color: #00ff88;"></i>
                     <strong>317% Growth</strong> - Hired 2 additional staff members
@@ -331,7 +364,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"I've tried other lead providers, but Apex Leads stands out. The leads are pre-qualified and serious about the work. My booking rate is way higher than before. Customer service is outstanding!"</p>
+                <p class="testimonial-text">"I've tried other lead providers, but Apex Leads stands out. The leads are
+                    pre-qualified and serious about the work. My booking rate is way higher than before. Customer
+                    service is outstanding!"</p>
                 <div class="testimonial-metrics">
                     <i class="fas fa-arrow-up" style="color: #00ff88;"></i>
                     <strong>35% Booking Rate</strong> - Up from 18% with competitors
@@ -356,7 +391,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"The ROI has been phenomenal. I'm spending £600/month on leads and making £3,000+ in revenue. The support team helped me optimize my conversion strategy. Couldn't ask for better partnership!"</p>
+                <p class="testimonial-text">"The ROI has been phenomenal. I'm spending £600/month on leads and making
+                    £3,000+ in revenue. The support team helped me optimize my conversion strategy. Couldn't ask for
+                    better partnership!"</p>
                 <div class="testimonial-metrics">
                     <i class="fas fa-arrow-up" style="color: #00ff88;"></i>
                     <strong>400% ROI</strong> - Consistent monthly performance
@@ -381,7 +418,9 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <p class="testimonial-text">"As a solo operator, I was worried about scaling. Apex Leads made it possible. I can now take 30+ jobs a month and I'm thinking about hiring. The leads are consistent and reliable!"</p>
+                <p class="testimonial-text">"As a solo operator, I was worried about scaling. Apex Leads made it
+                    possible. I can now take 30+ jobs a month and I'm thinking about hiring. The leads are consistent
+                    and reliable!"</p>
                 <div class="testimonial-metrics">
                     <i class="fas fa-arrow-up" style="color: #00ff88;"></i>
                     <strong>50 jobs/month</strong> - Up from 8 monthly bookings
@@ -391,7 +430,8 @@
 
         <!-- Video Testimonials Section -->
         <h2 style="margin: 3rem 0 2rem 0;">Watch Client Success Stories</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Real contractors sharing their experience with Apex Leads Analytics</p>
+        <p style="color: var(--text-secondary); margin-bottom: 2rem;">Real contractors sharing their experience with
+            Apex Leads Analytics</p>
 
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
             <!-- Video 1 -->
@@ -429,24 +469,33 @@
         </div>
 
         <!-- Key Benefits Summary -->
-        <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; margin: 3rem 0;">
+        <div
+            style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; margin: 3rem 0;">
             <h3 style="margin-top: 0;">Why Our Clients Love Apex Leads</h3>
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
                 <div>
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Pre-Qualified Leads</h4>
-                    <p style="color: var(--text-secondary); margin: 0;">All leads are genuinely interested in your service</p>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i>
+                        Pre-Qualified Leads</h4>
+                    <p style="color: var(--text-secondary); margin: 0;">All leads are genuinely interested in your
+                        service</p>
                 </div>
                 <div>
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Exclusive Territory</h4>
-                    <p style="color: var(--text-secondary); margin: 0;">You get exclusive rights - no competition for the same leads</p>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i>
+                        Exclusive Territory</h4>
+                    <p style="color: var(--text-secondary); margin: 0;">You get exclusive rights - no competition for
+                        the same leads</p>
                 </div>
                 <div>
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Real-Time Support</h4>
-                    <p style="color: var(--text-secondary); margin: 0;">Dedicated support team to help optimize your performance</p>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i>
+                        Real-Time Support</h4>
+                    <p style="color: var(--text-secondary); margin: 0;">Dedicated support team to help optimize your
+                        performance</p>
                 </div>
                 <div>
-                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i> Flexible Plans</h4>
-                    <p style="color: var(--text-secondary); margin: 0;">Scale up or down based on your capacity and needs</p>
+                    <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-check-circle"></i>
+                        Flexible Plans</h4>
+                    <p style="color: var(--text-secondary); margin: 0;">Scale up or down based on your capacity and
+                        needs</p>
                 </div>
             </div>
         </div>
@@ -456,7 +505,8 @@
     <section class="service-cta">
         <h2>Ready to Join Our Success Stories?</h2>
         <p>Start receiving quality leads and watch your business grow</p>
-        <a href="index.html#contact" class="scroll-link" style="display: inline-block; background: var(--primary); color: black; padding: 1rem 2.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin-top: 1.5rem;">
+        <a href="index.html#contact" class="scroll-link"
+            style="display: inline-block; background: var(--primary); color: black; padding: 1rem 2.5rem; border-radius: 10px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; margin-top: 1.5rem;">
             Get Started Today
         </a>
     </section>
@@ -479,8 +529,8 @@
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p>Phone: +44 (0) 7456 522 980</p>
-                <p>Email: haidarzaman202@gmail.com</p>
+                <p>Phone:07456522980</p>
+                <p>Email: moazzin.zaman@outlook.com</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -490,4 +540,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

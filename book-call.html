@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +13,14 @@
             max-width: 900px;
             margin: 0 auto;
         }
+
         .booking-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             margin: 2rem 0;
         }
+
         .booking-form {
             background: rgba(21, 29, 59, 0.6);
             border: 1px solid rgba(0, 212, 255, 0.2);
@@ -25,15 +28,18 @@
             padding: 2rem;
             backdrop-filter: blur(10px);
         }
+
         .form-group {
             margin-bottom: 1.5rem;
         }
+
         .form-group label {
             display: block;
             margin-bottom: 0.5rem;
             color: var(--text-secondary);
             font-weight: 500;
         }
+
         .form-group input,
         .form-group select,
         .form-group textarea {
@@ -47,6 +53,7 @@
             font-family: inherit;
             transition: all 0.3s ease;
         }
+
         .form-group input:focus,
         .form-group select:focus,
         .form-group textarea:focus {
@@ -55,16 +62,19 @@
             box-shadow: 0 0 15px rgba(0, 212, 255, 0.2);
             background: rgba(0, 0, 0, 0.5);
         }
+
         .form-group textarea {
             resize: vertical;
             min-height: 100px;
         }
+
         .time-slots {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
             margin-top: 1rem;
         }
+
         .time-slot {
             padding: 0.75rem;
             background: rgba(0, 0, 0, 0.2);
@@ -75,16 +85,19 @@
             transition: all 0.3s ease;
             font-size: 0.9rem;
         }
+
         .time-slot:hover {
             border-color: var(--primary);
             background: rgba(0, 212, 255, 0.1);
         }
+
         .time-slot.selected {
             background: var(--primary);
             color: black;
             border-color: var(--primary);
             font-weight: 600;
         }
+
         .submit-btn {
             width: 100%;
             padding: 1rem;
@@ -98,15 +111,18 @@
             transition: all 0.3s ease;
             margin-top: 1rem;
         }
+
         .submit-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
         }
+
         .booking-details {
             display: flex;
             flex-direction: column;
             gap: 2rem;
         }
+
         .detail-card {
             background: rgba(21, 29, 59, 0.6);
             border: 1px solid rgba(0, 212, 255, 0.2);
@@ -114,31 +130,37 @@
             padding: 1.5rem;
             backdrop-filter: blur(10px);
         }
+
         .detail-icon {
             font-size: 2rem;
             color: var(--primary);
             margin-bottom: 0.75rem;
         }
+
         .detail-card h3 {
             margin: 0 0 0.75rem 0;
             color: var(--text-primary);
         }
+
         .detail-card p {
             margin: 0;
             color: var(--text-secondary);
             line-height: 1.6;
         }
+
         .benefits-list {
             list-style: none;
             padding: 0;
             margin: 1rem 0 0 0;
         }
+
         .benefits-list li {
             color: var(--text-secondary);
             padding: 0.5rem 0;
             padding-left: 1.5rem;
             position: relative;
         }
+
         .benefits-list li::before {
             content: '✓';
             position: absolute;
@@ -146,12 +168,14 @@
             color: var(--primary);
             font-weight: 700;
         }
+
         .calendar-view {
             background: rgba(0, 0, 0, 0.2);
             border-radius: 10px;
             padding: 1rem;
             margin-top: 1rem;
         }
+
         .calendar-header {
             display: flex;
             justify-content: space-between;
@@ -159,11 +183,13 @@
             margin-bottom: 1rem;
             color: var(--text-secondary);
         }
+
         .calendar-days {
             display: grid;
             grid-template-columns: repeat(7, 1fr);
             gap: 0.5rem;
         }
+
         .calendar-day {
             aspect-ratio: 1;
             display: flex;
@@ -176,18 +202,22 @@
             font-size: 0.85rem;
             transition: all 0.3s ease;
         }
+
         .calendar-day:hover {
             border-color: var(--primary);
             background: rgba(0, 212, 255, 0.2);
         }
+
         .calendar-day.available {
             color: var(--primary);
             font-weight: 600;
         }
+
         .calendar-day.unavailable {
             opacity: 0.3;
             cursor: not-allowed;
         }
+
         @media (max-width: 768px) {
             .booking-grid {
                 grid-template-columns: 1fr;
@@ -196,6 +226,7 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+
 <body>
     <!-- Enhanced Futuristic Background -->
     <div class="lightning-bg">
@@ -206,16 +237,20 @@
         <div class="electrical-field"></div>
         <div class="lightning-container">
             <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
-                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+                <polyline class="lightning-bolt-1"
+                    points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080" />
             </svg>
             <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
-                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+                <polyline class="lightning-bolt-2"
+                    points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080" />
             </svg>
             <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
-                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+                <polyline class="lightning-bolt-3"
+                    points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080" />
             </svg>
             <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
-                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+                <polyline class="lightning-bolt-4"
+                    points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080" />
             </svg>
         </div>
         <div class="particles">
@@ -283,7 +318,7 @@
 
                         <div class="form-group">
                             <label for="phone">Phone Number *</label>
-                            <input type="tel" id="phone" name="phone" required placeholder="+44 (0) 7456 522 980">
+                            <input type="tel" id="phone" name="phone" required placeholder="07456522980">
                         </div>
 
                         <div class="form-group">
@@ -322,7 +357,8 @@
 
                         <div class="form-group">
                             <label for="message">Tell Us About Your Business (Optional)</label>
-                            <textarea id="message" name="message" placeholder="Current revenue, team size, growth goals..."></textarea>
+                            <textarea id="message" name="message"
+                                placeholder="Current revenue, team size, growth goals..."></textarea>
                         </div>
 
                         <button type="submit" class="submit-btn">Confirm Booking</button>
@@ -344,7 +380,8 @@
                             <i class="fas fa-video"></i>
                         </div>
                         <h3>How It Works</h3>
-                        <p>We'll connect via Zoom or phone at your preferred time. No need to download anything — we'll send you the link via email.</p>
+                        <p>We'll connect via Zoom or phone at your preferred time. No need to download anything — we'll
+                            send you the link via email.</p>
                     </div>
 
                     <div class="detail-card">
@@ -367,54 +404,71 @@
                         </div>
                         <h3>Have Questions?</h3>
                         <p>Can't find a time that works? <strong>Call us directly:</strong></p>
-                        <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin: 0.5rem 0 0 0;">+44 (0) 7456 522 980</p>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0 0 0;">Available Monday - Friday, 9AM - 6PM</p>
+                        <p style="font-size: 1.1rem; color: var(--primary); font-weight: 600; margin: 0.5rem 0 0 0;">+44
+07456522980</p>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin: 0.5rem 0 0 0;">Available
+                            Monday - Friday, 9AM - 6PM</p>
                     </div>
                 </div>
             </div>
 
             <!-- Why Book a Call -->
-            <div style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; margin: 3rem 0;">
+            <div
+                style="background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; margin: 3rem 0;">
                 <h2 style="margin-top: 0;">Why Book a Consultation?</h2>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
                     <div>
-                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-target"></i> Personalized Strategy</h4>
-                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">We develop a custom plan specific to your business, market, and goals.</p>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-target"></i>
+                            Personalized Strategy</h4>
+                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">We develop a custom plan
+                            specific to your business, market, and goals.</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-chart-line"></i> ROI Projection</h4>
-                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Get accurate revenue projections based on your niche and capacity.</p>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-chart-line"></i> ROI
+                            Projection</h4>
+                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Get accurate revenue
+                            projections based on your niche and capacity.</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-handshake"></i> Expert Guidance</h4>
-                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Learn from industry experts who understand your challenges.</p>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-handshake"></i>
+                            Expert Guidance</h4>
+                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Learn from industry
+                            experts who understand your challenges.</p>
                     </div>
                     <div>
-                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-gift"></i> Exclusive Offer</h4>
-                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Get special pricing and bonuses when you book a consultation.</p>
+                        <h4 style="color: var(--primary); margin-bottom: 0.5rem;"><i class="fas fa-gift"></i> Exclusive
+                            Offer</h4>
+                        <p style="color: var(--text-secondary); margin: 0; font-size: 0.9rem;">Get special pricing and
+                            bonuses when you book a consultation.</p>
                     </div>
                 </div>
             </div>
 
             <!-- Success Stories Quick -->
-            <div style="background: rgba(21, 29, 59, 0.6); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; margin: 3rem 0; text-align: center;">
+            <div
+                style="background: rgba(21, 29, 59, 0.6); border: 1px solid rgba(0, 212, 255, 0.2); border-radius: 15px; padding: 2rem; margin: 3rem 0; text-align: center;">
                 <h2 style="margin-top: 0;">Recent Consultation Results</h2>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; margin-top: 1.5rem;">
                     <div>
                         <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0;">↑ 280%</p>
-                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Average Revenue Growth</p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Average
+                            Revenue Growth</p>
                     </div>
                     <div>
                         <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0;">3-4 weeks</p>
-                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">To First Quality Leads</p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">To First
+                            Quality Leads</p>
                     </div>
                     <div>
                         <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0;">92%</p>
-                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Client Satisfaction</p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Client
+                            Satisfaction</p>
                     </div>
                     <div>
                         <p style="font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0;">500+</p>
-                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Active Contractors</p>
+                        <p style="color: var(--text-secondary); margin: 0.5rem 0 0 0; font-size: 0.9rem;">Active
+                            Contractors</p>
                     </div>
                 </div>
             </div>
@@ -445,8 +499,8 @@
             </div>
             <div class="footer-section">
                 <h3>Contact</h3>
-                <p>Phone: +44 (0) 7456 522 980</p>
-                <p>Email: haidarzaman202@gmail.com</p>
+                <p>Phone:07456522980</p>
+                <p>Email: moazzin.zaman@outlook.com</p>
             </div>
         </div>
         <div class="footer-bottom">
@@ -467,14 +521,14 @@
 
         function handleBooking(event) {
             event.preventDefault();
-            
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const phone = document.getElementById('phone').value;
             const service = document.getElementById('service').value;
             const date = document.getElementById('date').value;
             const time = document.getElementById('time').value;
-            
+
             if (!time) {
                 alert('Please select a preferred time');
                 return;
@@ -495,11 +549,12 @@ Thank you for booking! We'll send you a confirmation email shortly.
 
             // Show confirmation
             alert('Thank you for booking! We will send you a confirmation email at ' + email + ' with your Zoom link and meeting details.');
-            
+
             // Reset form
             event.target.reset();
             document.querySelectorAll('.time-slot').forEach(slot => slot.classList.remove('selected'));
         }
     </script>
 </body>
+
 </html>

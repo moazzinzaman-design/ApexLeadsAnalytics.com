@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pricing - Apex Leads Analytics | Lead Generation Plans</title>
-    <meta name="description" content="Flexible pricing for lead generation. Choose pay-per-lead, monthly subscription, or commission-based. All plans include verified leads and real-time notifications.">
+    <meta name="description"
+        content="Flexible pricing for lead generation. Choose pay-per-lead, monthly subscription, or commission-based. All plans include verified leads and real-time notifications.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="services-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -46,18 +48,37 @@
         }
 
         @keyframes slideDown {
-            from { transform: translateY(-30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         @keyframes slideUp {
-            from { transform: translateY(30px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
         }
 
         /* Payment Models Section */
@@ -107,9 +128,17 @@
             animation: slideUp 0.6s ease backwards;
         }
 
-        .model-card:nth-child(1) { animation-delay: 0s; }
-        .model-card:nth-child(2) { animation-delay: 0.1s; }
-        .model-card:nth-child(3) { animation-delay: 0.2s; }
+        .model-card:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .model-card:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .model-card:nth-child(3) {
+            animation-delay: 0.2s;
+        }
 
         .model-card::before {
             content: '';
@@ -574,40 +603,45 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
+
 <body>
     <!-- Enhanced Futuristic Background with Stars, Clouds, and Lightning -->
     <div class="lightning-bg">
         <!-- Star Field Layer -->
         <div class="stars-bg"></div>
-        
+
         <!-- Cloud Layer -->
         <div class="clouds-bg"></div>
-        
+
         <!-- Tech Grid Pattern -->
         <div class="tech-grid"></div>
-        
+
         <!-- Ambient Glow -->
         <div class="ambient-glow"></div>
-        
+
         <!-- Electrical Field -->
         <div class="electrical-field"></div>
-        
+
         <!-- Lightning Bolts -->
         <div class="lightning-container">
             <svg class="lightning" id="lightning1" viewBox="0 0 1920 1080">
-                <polyline class="lightning-bolt-1" points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080"/>
+                <polyline class="lightning-bolt-1"
+                    points="200,0 250,150 180,250 260,350 190,450 280,600 200,750 300,900 250,1080" />
             </svg>
             <svg class="lightning" id="lightning2" viewBox="0 0 1920 1080" style="left: 50%;">
-                <polyline class="lightning-bolt-2" points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080"/>
+                <polyline class="lightning-bolt-2"
+                    points="1720,0 1650,180 1750,280 1680,380 1750,500 1680,650 1750,800 1650,950 1720,1080" />
             </svg>
             <svg class="lightning" id="lightning3" viewBox="0 0 1920 1080" style="left: 75%;">
-                <polyline class="lightning-bolt-3" points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080"/>
+                <polyline class="lightning-bolt-3"
+                    points="960,0 920,160 1000,300 940,420 1020,550 950,700 1010,850 960,1080" />
             </svg>
             <svg class="lightning" id="lightning4" viewBox="0 0 1920 1080" style="left: 25%;">
-                <polyline class="lightning-bolt-4" points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080"/>
+                <polyline class="lightning-bolt-4"
+                    points="400,0 380,140 420,280 390,380 440,520 410,700 450,900 430,1080" />
             </svg>
         </div>
-        
+
         <!-- Floating Particles -->
         <div class="particles">
             <div class="particle particle-1"></div>
@@ -650,13 +684,15 @@
     <section class="pricing-hero">
         <h1>Simple, Transparent Pricing</h1>
         <p class="subtitle">Choose the plan that works for your business</p>
-        <p class="tagline">No hidden fees, no long-term contracts. Pay only for what you use and grow your lead generation business with confidence.</p>
+        <p class="tagline">No hidden fees, no long-term contracts. Pay only for what you use and grow your lead
+            generation business with confidence.</p>
     </section>
 
     <!-- Payment Models Section -->
     <section class="payment-models-section">
         <h2>Payment Models</h2>
-        <p class="section-intro">Select the pricing model that best fits your business needs. All plans include verified leads and real-time notifications.</p>
+        <p class="section-intro">Select the pricing model that best fits your business needs. All plans include verified
+            leads and real-time notifications.</p>
 
         <div class="models-grid">
             <!-- Pay Per Lead -->
@@ -665,7 +701,8 @@
                 <h3 class="model-title">Pay Per Lead</h3>
                 <div class="model-price">£10–£30</div>
                 <p class="model-period">per qualified lead</p>
-                <p class="model-description">Perfect for businesses that want full control over their lead spend and prefer to pay only for what they receive.</p>
+                <p class="model-description">Perfect for businesses that want full control over their lead spend and
+                    prefer to pay only for what they receive.</p>
                 <ul class="model-features">
                     <li>No monthly commitment</li>
                     <li>Cancel anytime</li>
@@ -683,7 +720,8 @@
                 <h3 class="model-title">Monthly Subscription</h3>
                 <div class="model-price">£200–£500</div>
                 <p class="model-period">per month</p>
-                <p class="model-description">Ideal for businesses seeking consistent, predictable growth with unlimited leads in their service area.</p>
+                <p class="model-description">Ideal for businesses seeking consistent, predictable growth with unlimited
+                    leads in their service area.</p>
                 <ul class="model-features">
                     <li>Unlimited qualified leads</li>
                     <li>Priority lead placement</li>
@@ -701,7 +739,8 @@
                 <h3 class="model-title">Commission Per Job</h3>
                 <div class="model-price">20–40%</div>
                 <p class="model-period">of completed job value</p>
-                <p class="model-description">Great for new businesses or those seeking zero upfront costs. You only pay when you actually complete a job.</p>
+                <p class="model-description">Great for new businesses or those seeking zero upfront costs. You only pay
+                    when you actually complete a job.</p>
                 <ul class="model-features">
                     <li>Zero upfront investment</li>
                     <li>Transparent commission structure</li>
@@ -718,7 +757,8 @@
     <!-- Services by Category -->
     <section class="services-category-section">
         <h2>Services & Lead Pricing</h2>
-        <p class="category-intro">Browse our categorized services with transparent lead pricing. Prices vary by service complexity and location demand.</p>
+        <p class="category-intro">Browse our categorized services with transparent lead pricing. Prices vary by service
+            complexity and location demand.</p>
 
         <div class="services-container">
             <!-- Cleaning Services -->
@@ -732,7 +772,8 @@
                 <div class="service-grid">
                     <div class="service-item">
                         <div class="service-name">House Cleaning</div>
-                        <p class="service-description">Residential house cleaning leads including interior and exterior services.</p>
+                        <p class="service-description">Residential house cleaning leads including interior and exterior
+                            services.</p>
                         <div class="service-price-wrapper">
                             <span class="service-price">£15–£25</span>
                             <span class="service-badge">Per Lead</span>
@@ -741,7 +782,8 @@
 
                     <div class="service-item">
                         <div class="service-name">Carpet Cleaning</div>
-                        <p class="service-description">Specialized carpet cleaning service leads for homes and businesses.</p>
+                        <p class="service-description">Specialized carpet cleaning service leads for homes and
+                            businesses.</p>
                         <div class="service-price-wrapper">
                             <span class="service-price">£20–£30</span>
                             <span class="service-badge">Per Lead</span>
@@ -924,47 +966,56 @@
         <div class="faq-grid">
             <div class="faq-card">
                 <h4>Do you have setup fees?</h4>
-                <p>No. There are no setup fees, onboarding fees, or hidden charges. You start paying only when you receive your first lead.</p>
+                <p>No. There are no setup fees, onboarding fees, or hidden charges. You start paying only when you
+                    receive your first lead.</p>
             </div>
 
             <div class="faq-card">
                 <h4>Can I switch payment plans?</h4>
-                <p>Yes. You can switch between payment models anytime. Simply contact us, and we'll help transition your account with no penalties.</p>
+                <p>Yes. You can switch between payment models anytime. Simply contact us, and we'll help transition your
+                    account with no penalties.</p>
             </div>
 
             <div class="faq-card">
                 <h4>What if a lead doesn't convert?</h4>
-                <p>You still pay for the lead. However, we guarantee lead quality and responsive customers. Our leads come from real, verified inquiries.</p>
+                <p>You still pay for the lead. However, we guarantee lead quality and responsive customers. Our leads
+                    come from real, verified inquiries.</p>
             </div>
 
             <div class="faq-card">
                 <h4>Are there minimum purchase requirements?</h4>
-                <p>No. With pay-per-lead, buy as few or as many leads as you need. With subscriptions, cancel anytime with no penalties.</p>
+                <p>No. With pay-per-lead, buy as few or as many leads as you need. With subscriptions, cancel anytime
+                    with no penalties.</p>
             </div>
 
             <div class="faq-card">
                 <h4>How are leads delivered?</h4>
-                <p>Instantly. You receive notifications via email, WhatsApp, or SMS within seconds of a customer inquiry. Real-time delivery means you respond first.</p>
+                <p>Instantly. You receive notifications via email, WhatsApp, or SMS within seconds of a customer
+                    inquiry. Real-time delivery means you respond first.</p>
             </div>
 
             <div class="faq-card">
                 <h4>What service areas do you cover?</h4>
-                <p>We operate across the UK. Lead prices may vary by location due to demand, competition, and service complexity in your area.</p>
+                <p>We operate across the UK. Lead prices may vary by location due to demand, competition, and service
+                    complexity in your area.</p>
             </div>
 
             <div class="faq-card">
                 <h4>Can I get leads for multiple services?</h4>
-                <p>Absolutely. You can receive leads for one service or multiple services. Each service has its own pricing and can be managed independently.</p>
+                <p>Absolutely. You can receive leads for one service or multiple services. Each service has its own
+                    pricing and can be managed independently.</p>
             </div>
 
             <div class="faq-card">
                 <h4>Do you offer volume discounts?</h4>
-                <p>Yes. For subscription models and high-volume lead purchases, we offer custom pricing. Contact us to discuss your specific needs.</p>
+                <p>Yes. For subscription models and high-volume lead purchases, we offer custom pricing. Contact us to
+                    discuss your specific needs.</p>
             </div>
 
             <div class="faq-card">
                 <h4>How do I track my spending?</h4>
-                <p>Our dashboard provides real-time analytics. Track leads received, conversion rates, spending, and ROI all in one place. Detailed reports available.</p>
+                <p>Our dashboard provides real-time analytics. Track leads received, conversion rates, spending, and ROI
+                    all in one place. Detailed reports available.</p>
             </div>
         </div>
     </section>
@@ -986,15 +1037,15 @@
         <div class="contact-boxes">
             <div class="contact-box">
                 <h3>📞 Call</h3>
-                <a href="tel:+447711776530">+44 7711 776530</a>
+                <a href="tel:+447711776530">07456522980</a>
             </div>
             <div class="contact-box">
                 <h3>📧 Email</h3>
-                <a href="mailto:haidarzaman202@gmail.com">haidarzaman202@gmail.com</a>
+                <a href="mailto:moazzin.zaman@outlook.com">moazzin.zaman@outlook.com</a>
             </div>
             <div class="contact-box">
                 <h3>💬 WhatsApp</h3>
-                <a href="https://wa.me/447456522980" target="_blank">Message us on WhatsApp</a>
+                <a href="https://wa.me/447711776530" target="_blank">Message us on WhatsApp</a>
             </div>
         </div>
     </section>
@@ -1027,11 +1078,13 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Apex Leads Analytics. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+                <p>&copy; 2026 Apex Leads Analytics. All rights reserved. | <a href="#">Privacy Policy</a> | <a
+                        href="#">Terms of Service</a></p>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
