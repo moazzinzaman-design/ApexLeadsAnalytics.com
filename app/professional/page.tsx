@@ -152,7 +152,7 @@ export default function ProfessionalDetailPage() {
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-primary to-secondary p-1">
                       <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
                         <span className="text-4xl font-bold text-gradient-1">
-                          {professional.name.split(' ').map(n => n[0]).join('')}
+                          {professional.name.split(' ').map((n: string) => n[0]).join('')}
                         </span>
                       </div>
                     </div>
