@@ -88,9 +88,10 @@ export async function GET(request: NextRequest) {
     const verifiedOnly = searchParams.get('verified') === 'true';
     const limit = parseInt(searchParams.get('limit') || '20');
     const offset = parseInt(searchParams.get('offset') || '0');
-    const sortBy = searchParams.get('sort') || 'distance';
+    const sortBy = searchParams.get('sort') || 'rating';
 
-    const searchCoords = getCoordsFromPostcode(postcode);
+    // Get coordinates if postcode provided
+    const searchCoords = postcode ? getCoordsFromPostcode(postcode) : null;
 
     // Try to fetch from Supabase
     let profiles: any[] = [];
@@ -99,7 +100,7 @@ export async function GET(request: NextRequest) {
     try {
       const supabase = getSupabaseAdmin();
       
-      // Build query
+      // Build query - fetch ALL profiles if no filters, or apply category filter
       let query = supabase
         .from('profiles')
         .select('*', { count: 'exact' });
@@ -114,9 +115,9 @@ export async function GET(request: NextRequest) {
         query = query.eq('verified_status', true);
       }
 
-      // Execute query
+      // Execute query - get more profiles for client-side filtering
       const { data, count, error } = await query
-        .range(offset, offset + limit - 1)
+        .range(0, 100) // Get up to 100 profiles
         .order('verified_status', { ascending: false })
         .order('total_jobs_completed', { ascending: false });
 
@@ -161,9 +162,20 @@ export async function GET(request: NextRequest) {
 
       // Filter by radius
       profiles = profiles.filter(p => (p.distance_miles || 0) <= radius);
+    } else if (profiles.length > 0) {
+      // No location provided - sort by rating/jobs by default
+      if (sortBy === 'rating') {
+        profiles.sort((a, b) => (b.total_jobs_completed || 0) - (a.total_jobs_completed || 0));
+      } else if (sortBy === 'price_low') {
+        profiles.sort((a, b) => (a.starting_price || a.hourly_rate || 999) - (b.starting_price || b.hourly_rate || 999));
+      } else if (sortBy === 'price_high') {
+        profiles.sort((a, b) => (b.starting_price || b.hourly_rate || 0) - (a.starting_price || a.hourly_rate || 0));
+      }
     }
 
-    // If no data from Supabase, return empty array (frontend will show message)
+    // Limit results
+    profiles = profiles.slice(offset, offset + limit);
+
     return NextResponse.json({
       success: true,
       data: {

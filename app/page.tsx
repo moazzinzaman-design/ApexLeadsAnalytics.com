@@ -330,7 +330,7 @@ export default function HomePage() {
             <Link href="/directory" className="btn btn-primary">
               Browse Directory
             </Link>
-            <Link href="/register" className="btn btn-secondary">
+            <Link href="/signup" className="btn btn-secondary">
               List Your Services
             </Link>
           </div>

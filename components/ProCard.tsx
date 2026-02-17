@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Profile } from "@/types";
 import VerifiedBadge from "./VerifiedBadge";
 import { useState } from "react";
+import LeadCaptureForm from "./LeadCaptureForm";
 
 interface ProCardProps {
   profile: Profile;
@@ -14,6 +15,7 @@ interface ProCardProps {
 
 export default function ProCard({ profile, averageRating = 0, reviewCount = 0 }: ProCardProps) {
   const [imageError, setImageError] = useState(false);
+  const [showContactForm, setShowContactForm] = useState(false);
 
   const initials = profile.name
     ?.split(" ")
@@ -195,12 +197,27 @@ export default function ProCard({ profile, averageRating = 0, reviewCount = 0 }:
               )}
             </div>
 
-            <span className="px-4 py-2 text-sm font-semibold text-background bg-gradient-to-r from-primary to-secondary rounded-lg group-hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] transition-all">
-              View Profile
-            </span>
+            <button 
+              onClick={(e) => {
+                e.preventDefault();
+                setShowContactForm(true);
+              }}
+              className="px-4 py-2 text-sm font-semibold text-background bg-gradient-to-r from-primary to-secondary rounded-lg group-hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] transition-all"
+            >
+              Contact
+            </button>
           </div>
         </div>
       </div>
+
+      {/* Contact Form Modal */}
+      <LeadCaptureForm
+        proId={profile.id}
+        proName={profile.business_name || profile.name}
+        serviceType={profile.category as any}
+        isOpen={showContactForm}
+        onClose={() => setShowContactForm(false)}
+      />
     </Link>
   );
 }

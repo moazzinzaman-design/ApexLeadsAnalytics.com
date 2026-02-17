@@ -167,12 +167,12 @@ export default function Navigation() {
           {/* CTA Button */}
           <div className="hidden lg:flex items-center gap-3">
             <Link
-              href="/login"
+              href="/signup"
               className="px-4 py-2 text-sm font-medium text-text-secondary hover:text-white transition-colors"
             >
-              Sign In
+              Join as Pro
             </Link>
-            <Link href="/register" className="btn btn-primary text-sm">
+            <Link href="/signup" className="btn btn-primary text-sm">
               Get Started
             </Link>
           </div>
@@ -273,13 +273,13 @@ export default function Navigation() {
             </div>
             <div className="mt-4 pt-4 border-t border-white/5 space-y-2">
               <Link
-                href="/login"
+                href="/signup"
                 className="block w-full px-4 py-3 text-center text-sm font-medium text-text-secondary hover:text-white rounded-lg border border-white/10"
               >
-                Sign In
+                Join as Pro
               </Link>
               <Link
-                href="/register"
+                href="/signup"
                 className="block w-full px-4 py-3 text-center text-sm font-medium text-background bg-primary rounded-lg"
               >
                 Get Started
