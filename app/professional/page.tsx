@@ -3,7 +3,33 @@
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import Image from "next/image";
+
+// Force dynamic rendering - no static generation
+export const dynamic = 'force-dynamic';
+export const dynamicParams = true;
+
+interface ProfessionalData {
+  id: string;
+  name: string;
+  email: string;
+  phone?: string;
+  business_name?: string;
+  category: string;
+  bio?: string;
+  city: string;
+  county?: string;
+  postcode: string;
+  latitude?: number;
+  longitude?: number;
+  hourly_rate?: number;
+  starting_price?: number;
+  verified_status?: boolean;
+  total_jobs_completed?: number;
+  years_experience?: number;
+  service_radius?: number;
+  available_weekdays?: boolean;
+  emergency_calls?: boolean;
+}
 
 // Service category labels
 const categoryLabels: Record<string, string> = {
@@ -21,10 +47,10 @@ const categoryLabels: Record<string, string> = {
 
 export default function ProfessionalDetailPage() {
   const searchParams = useSearchParams();
-  const id = searchParams.get("id");
+  const id = searchParams.get("id") as string;
   
-  const [professional, setProfessional] = useState<any>(null);
-  const [similarPros, setSimilarPros] = useState<any[]>([]);
+  const [professional, setProfessional] = useState<ProfessionalData | null>(null);
+  const [similarPros, setSimilarPros] = useState<ProfessionalData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showContactForm, setShowContactForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -119,6 +145,9 @@ export default function ProfessionalDetailPage() {
     );
   }
 
+  const proName = String(professional.name || '');
+  const proFirstName = proName.split(' ')[0];
+
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section with Gradient */}
@@ -152,7 +181,7 @@ export default function ProfessionalDetailPage() {
                     <div className="w-full h-full rounded-full bg-gradient-to-br from-primary to-secondary p-1">
                       <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
                         <span className="text-4xl font-bold text-gradient-1">
-                          {professional.name.split(' ').map((n: string) => n[0]).join('')}
+                          {proName.split(' ').map((n: string) => n[0]).join('')}
                         </span>
                       </div>
                     </div>
@@ -165,14 +194,14 @@ export default function ProfessionalDetailPage() {
                     )}
                   </div>
                   
-                  <h1 className="text-2xl font-bold text-white mb-1">{professional.name}</h1>
+                  <h1 className="text-2xl font-bold text-white mb-1">{proName}</h1>
                   {professional.business_name && (
-                    <p className="text-text-secondary mb-2">{professional.business_name}</p>
+                    <p className="text-text-secondary mb-2">{String(professional.business_name)}</p>
                   )}
                   
                   <div className="flex items-center justify-center gap-2 mb-4">
                     <span className="px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">
-                      {categoryLabels[professional.category] || professional.category}
+                      {categoryLabels[String(professional.category)] || String(professional.category)}
                     </span>
                     {professional.verified_status && (
                       <span className="px-3 py-1 bg-green-500/20 text-green-400 rounded-full text-sm flex items-center gap-1">
@@ -194,14 +223,14 @@ export default function ProfessionalDetailPage() {
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
                     ))}
-                    <span className="text-text-secondary ml-2">({professional.total_jobs_completed || 0} jobs)</span>
+                    <span className="text-text-secondary ml-2">({Number(professional.total_jobs_completed) || 0} jobs)</span>
                   </div>
                   
                   <button 
                     onClick={() => setShowContactForm(true)}
                     className="btn btn-primary w-full mb-3"
                   >
-                    Contact {professional.name.split(' ')[0]}
+                    Contact {proFirstName}
                   </button>
                   
                   <div className="flex gap-2">
@@ -233,19 +262,19 @@ export default function ProfessionalDetailPage() {
               {/* Stats Cards */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div className="card p-4 text-center">
-                  <div className="text-3xl font-bold text-gradient-1 mb-1">£{professional.hourly_rate}</div>
+                  <div className="text-3xl font-bold text-gradient-1 mb-1">£{Number(professional.hourly_rate)}</div>
                   <div className="text-text-secondary text-sm">per hour</div>
                 </div>
                 <div className="card p-4 text-center">
-                  <div className="text-3xl font-bold text-gradient-1 mb-1">{professional.years_experience || 0}</div>
+                  <div className="text-3xl font-bold text-gradient-1 mb-1">{Number(professional.years_experience) || 0}</div>
                   <div className="text-text-secondary text-sm">years experience</div>
                 </div>
                 <div className="card p-4 text-center">
-                  <div className="text-3xl font-bold text-gradient-1 mb-1">{professional.total_jobs_completed || 0}</div>
+                  <div className="text-3xl font-bold text-gradient-1 mb-1">{Number(professional.total_jobs_completed) || 0}</div>
                   <div className="text-text-secondary text-sm">jobs completed</div>
                 </div>
                 <div className="card p-4 text-center">
-                  <div className="text-3xl font-bold text-gradient-1 mb-1">{professional.city}</div>
+                  <div className="text-3xl font-bold text-gradient-1 mb-1">{String(professional.city)}</div>
                   <div className="text-text-secondary text-sm">base location</div>
                 </div>
               </div>
@@ -256,10 +285,10 @@ export default function ProfessionalDetailPage() {
                   <svg className="w-6 h-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
-                  About {professional.name.split(' ')[0]}
+                  About {proFirstName}
                 </h2>
                 <p className="text-text-secondary leading-relaxed">
-                  {professional.bio || `Professional ${categoryLabels[professional.category] || professional.category} service provider with ${professional.years_experience || 'multiple'} years of experience. Committed to delivering high-quality work at competitive prices.`}
+                  {String(professional.bio) || `Professional ${categoryLabels[String(professional.category)] || String(professional.category)} service provider with ${Number(professional.years_experience) || 'multiple'} years of experience. Committed to delivering high-quality work at competitive prices.`}
                 </p>
               </div>
               
@@ -273,9 +302,9 @@ export default function ProfessionalDetailPage() {
                 </h2>
                 <div className="grid md:grid-cols-2 gap-3">
                   {[
-                    { icon: "🏠", label: categoryLabels[professional.category] || professional.category },
-                    { icon: "💰", label: `From £${professional.starting_price || professional.hourly_rate * 2}` },
-                    { icon: "📍", label: `Service Area: ${professional.service_radius || 25} miles` },
+                    { icon: "🏠", label: categoryLabels[String(professional.category)] || String(professional.category) },
+                    { icon: "💰", label: `From £${Number(professional.starting_price) || Number(professional.hourly_rate) * 2}` },
+                    { icon: "📍", label: `Service Area: ${Number(professional.service_radius) || 25} miles` },
                     { icon: "⏰", label: professional.available_weekdays ? "Weekdays Available" : "Limited Hours" },
                     { icon: "🛠️", label: professional.emergency_calls ? "Emergency Calls" : "Standard Service" },
                     { icon: "✅", label: "Insured & Vetted" },
@@ -307,9 +336,9 @@ export default function ProfessionalDetailPage() {
                         </svg>
                       </div>
                     </div>
-                    <p className="text-white font-semibold">{professional.city}, {professional.county}</p>
-                    <p className="text-text-secondary text-sm">{professional.postcode}</p>
-                    <p className="text-text-secondary text-sm mt-2">Serving {professional.service_radius || 25}+ mile radius</p>
+                    <p className="text-white font-semibold">{String(professional.city)}, {String(professional.county)}</p>
+                    <p className="text-text-secondary text-sm">{String(professional.postcode)}</p>
+                    <p className="text-text-secondary text-sm mt-2">Serving {Number(professional.service_radius) || 25}+ mile radius</p>
                   </div>
                 </div>
               </div>
@@ -327,14 +356,14 @@ export default function ProfessionalDetailPage() {
                 Similar Professionals Nearby
               </h2>
               <p className="text-text-secondary max-w-2xl mx-auto">
-                Looking for more options? Here are other {categoryLabels[professional.category]} professionals in the area
+                Looking for more options? Here are other {categoryLabels[String(professional.category)] || String(professional.category)} professionals in the area
               </p>
             </div>
             
             <div className="grid md:grid-cols-3 gap-6">
               {similarPros.map((pro) => (
                 <Link 
-                  key={pro.id} 
+                  key={String(pro.id)} 
                   href={`/professional?id=${pro.id}`}
                   className="card p-6 hover:border-primary/50 transition-all group"
                 >
@@ -342,18 +371,18 @@ export default function ProfessionalDetailPage() {
                     <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary p-0.5 flex-shrink-0">
                       <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
                         <span className="text-xl font-bold text-gradient-1">
-                          {pro.name.split(' ').map(n => n[0]).join('')}
+                          {String(pro.name).split(' ').map((n: string) => n[0]).join('')}
                         </span>
                       </div>
                     </div>
                     <div className="flex-1 min-w-0">
                       <h3 className="font-semibold text-white group-hover:text-primary transition-colors truncate">
-                        {pro.name}
+                        {String(pro.name)}
                       </h3>
-                      <p className="text-text-secondary text-sm truncate">{pro.business_name}</p>
+                      <p className="text-text-secondary text-sm truncate">{String(pro.business_name)}</p>
                       <div className="flex items-center gap-2 mt-1">
-                        <span className="text-primary font-semibold">£{pro.hourly_rate}/hr</span>
-                        <span className="text-text-secondary text-sm">• {pro.city}</span>
+                        <span className="text-primary font-semibold">£{Number(pro.hourly_rate)}/hr</span>
+                        <span className="text-text-secondary text-sm">• {String(pro.city)}</span>
                       </div>
                     </div>
                   </div>
@@ -362,7 +391,7 @@ export default function ProfessionalDetailPage() {
                       <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                       </svg>
-                      <span className="text-text-secondary text-sm">{pro.total_jobs_completed || 0} jobs</span>
+                      <span className="text-text-secondary text-sm">{Number(pro.total_jobs_completed) || 0} jobs</span>
                     </div>
                     {pro.verified_status && (
                       <span className="px-2 py-1 bg-green-500/20 text-green-400 rounded text-xs flex items-center gap-1">
@@ -403,16 +432,16 @@ export default function ProfessionalDetailPage() {
                 </div>
                 <h3 className="text-2xl font-bold text-white mb-2">Request Sent!</h3>
                 <p className="text-text-secondary">
-                  {professional.name.split(' ')[0]} will contact you shortly with a quote.
+                  {proFirstName} will contact you shortly with a quote.
                 </p>
               </div>
             ) : (
               <>
                 <h3 className="text-2xl font-bold text-white mb-2">
-                  Contact {professional.name.split(' ')[0]}
+                  Contact {proFirstName}
                 </h3>
                 <p className="text-text-secondary mb-6">
-                  Get a free quote for {categoryLabels[professional.category] || professional.category}
+                  Get a free quote for {categoryLabels[String(professional.category)] || String(professional.category)}
                 </p>
                 
                 <form onSubmit={handleSubmit} className="space-y-4">

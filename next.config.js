@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'standalone',
+  // Exclude from static generation
+  exclude: ['app/professional'],
   images: {
     remotePatterns: [
       {
