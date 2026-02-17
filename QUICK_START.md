@@ -1,1 +1,149 @@
-# ⚡ Quick Start Guide - 5 Minutes to Launch\n\n## 🎯 What You Need to Do\n\n### Step 1: Save Your Logo (1 minute)\n1. Find your Apex Leads Analytics logo image\n2. Save it as `logo.png`\n3. Place it in: `/Users/moazzinzaman/Desktop/CODING AI/MZ LEAD GEN WEB/`\n4. That's it! The website will automatically display it.\n\n### Step 2: Test Locally (1 minute)\n\n**Option A: Using Python (Recommended)**\n```bash\ncd \"/Users/moazzinzaman/Desktop/CODING AI/MZ LEAD GEN WEB\"\npython -m http.server 8000\n```\nThen open: `http://localhost:8000` in your browser\n\n**Option B: Using Node.js**\n```bash\nnpx http-server\n```\nThen open the URL it gives you\n\n**Option C: Double-click index.html**\nJust open the file directly in your browser\n\n### Step 3: Verify Everything Works (1 minute)\nCheck that you see:\n- ✓ Your logo floating and glowing\n- ✓ \"Apex Leads Analytics\" title with gradient colors\n- ✓ Particles orbiting around the logo\n- ✓ Smooth animations\n- ✓ Responsive layout\n\n### Step 4: Deploy to the Web (2 minutes)\n\n**Easiest Option: Netlify (Free)**\n1. Go to [netlify.com](https://netlify.com)\n2. Click \"Add new site\" → \"Deploy manually\"\n3. Drag and drop your project folder\n4. Done! Your site is live\n\n**Alternative: Vercel (Free)**\n1. Go to [vercel.com](https://vercel.com)\n2. Click \"New Project\"\n3. Upload your files\n4. Done!\n\n---\n\n## 📁 Files You Have\n\n```\nYour Project Folder:\n├── index.html          ← Main website file\n├── styles.css          ← Design and animations\n├── script.js           ← Interactivity\n├── logo.png            ← SAVE YOUR LOGO HERE\n├── README.md           ← Full documentation\n├── LOGO_SETUP.md       ← Logo instructions\n├── UPGRADE_SUMMARY.md  ← What changed\n├── VISUAL_EFFECTS_GUIDE.md  ← Animation details\n└── VISUAL_PREVIEW.md   ← What it looks like\n```\n\n---\n\n## 🎨 What's New vs Original\n\n### Added Features\n✨ **Logo Display** - Your Apex Leads Analytics logo\n✨ **Floating Animation** - Logo gently bounces\n✨ **Pulsing Glow** - Logo glows with color changes\n✨ **Orbital Particles** - 8 particles circle the logo\n✨ **Enhanced Title** - Multi-color gradient with glow\n✨ **Better Layout** - Centered, professional design\n\n### Kept from Original\n✓ All content sections\n✓ Contact form\n✓ Pricing information\n✓ Services list\n✓ Testimonials\n✓ Navigation\n\n---\n\n## 🔧 Customization (Optional)\n\n### Change Logo Size\nEdit `styles.css`, line ~80:\n```css\n.logo-container {\n    width: 200px;   /* Change this to 150, 250, etc. */\n    height: 200px;  /* Change this too */\n}\n```\n\n### Change Colors\nEdit `styles.css`, line ~10:\n```css\n:root {\n    --primary: #00d4ff;      /* Cyan - change this */\n    --secondary: #7c3aed;    /* Purple - change this */\n    --accent: #ff006e;       /* Pink - change this */\n}\n```\n\n### Slow Down Animations\nEdit `styles.css`, search for `4s` and `3s`:\n```css\nanimation: logoFloat 4s ease-in-out infinite;  /* Change 4s to 6s, 8s, etc. */\n```\n\n---\n\n## 🚀 Deployment Checklist\n\n- [ ] Save logo as `logo.png`\n- [ ] Test locally and see logo appear\n- [ ] Check animations are smooth\n- [ ] Verify on mobile (responsive design)\n- [ ] Update contact information if needed\n- [ ] Choose hosting (Netlify, Vercel, etc.)\n- [ ] Deploy to the web\n- [ ] Share your website URL\n- [ ] Start running ads to drive traffic\n- [ ] Capture leads via contact form\n\n---\n\n## 📞 Support Resources\n\n**Logo not showing?**\n→ Check [LOGO_SETUP.md](LOGO_SETUP.md)\n\n**Want to customize animations?**\n→ Check [VISUAL_EFFECTS_GUIDE.md](VISUAL_EFFECTS_GUIDE.md)\n\n**What changed?**\n→ Check [UPGRADE_SUMMARY.md](UPGRADE_SUMMARY.md)\n\n**How does it look?**\n→ Check [VISUAL_PREVIEW.md](VISUAL_PREVIEW.md)\n\n**Full documentation?**\n→ Check [README.md](README.md)\n\n---\n\n## 💡 Pro Tips\n\n1. **Logo Format**: Use PNG with transparent background for best results\n2. **Logo Size**: Save at 400x400px or larger for crisp display\n3. **Mobile Testing**: Use Chrome DevTools (F12 → Device Toolbar)\n4. **Performance**: All animations are GPU-accelerated for smooth 60fps\n5. **Browser Support**: Works on Chrome, Firefox, Safari, Edge (all modern versions)\n\n---\n\n## 🎉 You're All Set!\n\nYour website is professional, futuristic, and ready to convert leads.\n\nNext steps:\n1. ✅ Save your logo\n2. ✅ Test it works\n3. ✅ Deploy to web\n4. ✅ Run ads to drive traffic\n5. ✅ Start generating leads!\n\n---\n\n## 📊 Quick Stats\n\n| Metric | Value |\n|--------|-------|\n| Page Load Time | < 2 seconds |\n| Animation Smoothness | 60fps |\n| Mobile Responsive | ✓ Yes |\n| Browser Compatibility | 95%+ |\n| SEO Friendly | ✓ Yes |\n| Accessibility | ✓ WCAG Compliant |\n| File Size | ~50KB |\n\n---\n\n**Questions?** Check the documentation files.\n**Ready to launch?** Follow the steps above!\n**Need more features?** The code is fully customizable.\n\nGood luck with your lead generation business! 🚀\n"
+# 🚀 Apex Leads Analytics - Quick Start Guide
+
+## Prerequisites
+
+Before running the project, ensure you have:
+- **Node.js** 18.x or later installed
+- **npm** or **yarn** package manager
+- A **Supabase** account (free tier works)
+
+---
+
+## Step 1: Set Up Supabase Database
+
+1. Go to [supabase.com](https://supabase.com) and create a new project
+2. Navigate to **SQL Editor** in the left sidebar
+3. Copy the contents of `supabase/schema.sql`
+4. Paste and run the SQL script
+5. Go to **Settings → API** and copy:
+   - Project URL
+   - `service_role` key (or create a new anon key)
+
+---
+
+## Step 2: Configure Environment Variables
+
+1. Create a copy of `.env.example`:
+   ```bash
+   cp .env.example .env.local
+   ```
+
+2. Edit `.env.local` with your Supabase credentials:
+   ```
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
+
+3. (Optional) Add WhatsApp credentials for notifications:
+   ```
+   WHATSAPP_PHONE_NUMBER_ID=your_phone_number_id
+   WHATSAPP_ACCESS_TOKEN=your_access_token
+   ADMIN_WHATSAPP_NUMBER=+447711776530
+   ```
+
+---
+
+## Step 3: Install Dependencies
+
+```bash
+npm install
+```
+
+---
+
+## Step 4: Run Development Server
+
+```bash
+npm run dev
+```
+
+The app will be available at **http://localhost:3000**
+
+---
+
+## Step 5: Build for Production
+
+```bash
+npm run build
+npm start
+```
+
+---
+
+## Project Structure
+
+```
+apex-leads-analytics/
+├── app/                    # Next.js App Router
+│   ├── api/
+│   │   ├── search/        # Edge search API
+│   │   └── leads/         # Lead submission API
+│   ├── directory/         # Professional directory page
+│   ├── globals.css        # Global styles
+│   ├── layout.tsx         # Root layout
+│   └── page.tsx           # Home page
+├── components/            # React components
+│   ├── Navigation.tsx
+│   ├── Footer.tsx
+│   ├── SearchHero.tsx
+│   ├── DirectoryGrid.tsx
+│   ├── ProCard.tsx
+│   ├── VerifiedBadge.tsx
+│   └── LeadCaptureForm.tsx
+├── lib/
+│   ├── supabase.ts        # Supabase client
+│   └── whatsapp.ts        # WhatsApp notifications
+├── types/
+│   └── index.ts           # TypeScript types
+├── supabase/
+│   └── schema.sql         # Database schema
+└── tailwind.config.ts     # Tailwind config
+```
+
+---
+
+## Key Features Implemented
+
+✅ **Search Hero** - Service & location search bar  
+✅ **Directory Grid** - Professional cards with filters  
+✅ **Pro Cards** - Profile display with ratings, pricing, verification  
+✅ **Lead Capture Form** - Modal for client inquiries  
+✅ **Verified Badge** - Visual verification indicator  
+✅ **Edge Search API** - Proximity-based search with Haversine formula  
+✅ **WhatsApp Integration** - Notification system ready  
+
+---
+
+## Next Steps (Optional)
+
+1. **Add Profile Pages**: Create `app/directory/[id]/page.tsx`
+2. **Add Authentication**: Implement user login/signup with Supabase Auth
+3. **Add Dashboard**: Create pro dashboard for lead management
+4. **WhatsApp Setup**: Configure WhatsApp Business API for notifications
+
+---
+
+## Deployment
+
+Deploy to Vercel with one click:
+
+[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/your-repo/apex-leads-analytics)
+
+Or manually:
+```bash
+npm i -g vercel
+vercel
+```
+
+---
+
+## Support
+
+For questions or issues:
+- Email: moazzin.zaman@outlook.com
+- WhatsApp: +44 7456522980
+
+---
+
+**Built with ❤️ by Moazzin Zaman**
+
