@@ -38,7 +38,7 @@ export default function ProCard({ profile, averageRating = 0, reviewCount = 0 }:
   };
 
   return (
-    <Link href={`/directory/${profile.id}`}>
+    <Link href={`/professional?id=${profile.id}`}>
       <div className="card card-hover overflow-hidden group cursor-pointer h-full">
         {/* Card Header with Gradient Background */}
         <div className="relative h-44 bg-gradient-to-br from-primary/30 via-secondary/20 to-accent/20 overflow-hidden">
